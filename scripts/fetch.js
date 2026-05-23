@@ -1,21 +1,23 @@
+cat > /tmp/fetch.js << 'JSEOF'
 const fs = require('fs');
 
 const API_KEY = process.env.FOOTBALL_DATA_API_KEY;
 const BASE = 'https://api.football-data.org/v4';
 
-// 日本人選手とチームの対応表
+// 日本人選手とチームの対応表（正確に更新）
 const JAPANESE_PLAYERS = {
   "Brighton & Hove Albion FC": ["三笘薫"],
   "Liverpool FC":               ["遠藤航"],
   "Arsenal FC":                 ["冨安健洋"],
   "Real Sociedad de Fútbol":    ["久保建英"],
   "SC Freiburg":                ["堂安律"],
-  "Paris Saint-Germain FC":     ["伊東純也"],
+  "Stade de Reims":             ["伊東純也"],
   "Feyenoord Rotterdam":        ["上田綺世"],
   "Celtic FC":                  ["前田大然","古橋亨梧"],
   "AS Monaco FC":               ["南野拓実"],
   "Preston North End FC":       ["田中碧"],
   "Crystal Palace FC":          ["鎌田大地"],
+  "Parma Calcio 1913":          ["鈴木彩艶"],
 };
 
 // 取得するリーグ
@@ -34,7 +36,8 @@ const COMPETITIONS = [
 
 async function fetchMatches(code) {
   const today = new Date().toISOString().split('T')[0];
-  const future = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+  // 30日先まで取得
+  const future = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
   const url = `${BASE}/competitions/${code}/matches?dateFrom=${today}&dateTo=${future}&status=SCHEDULED`;
 
   const res = await fetch(url, {
@@ -92,3 +95,5 @@ async function main() {
 }
 
 main().catch(console.error);
+JSEOF
+cat /tmp/fetch.js
