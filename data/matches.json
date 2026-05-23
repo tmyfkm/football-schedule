@@ -1,0 +1,249 @@
+{
+  "updatedAt": "2026/5/24 2:27:31",
+  "matches": [
+    {
+      "kickoffUTC": "2026-05-23T18:45:00Z",
+      "home": "SS Lazio",
+      "away": "AC Pisa 1909",
+      "league": "Serie A",
+      "lClass": "l-serie",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-23T19:00:00Z",
+      "home": "Deportivo Alavés",
+      "away": "Rayo Vallecano de Madrid",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-23T19:00:00Z",
+      "home": "Real Betis Balompié",
+      "away": "Levante UD",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-23T19:00:00Z",
+      "home": "RC Celta de Vigo",
+      "away": "Sevilla FC",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-23T19:00:00Z",
+      "home": "RCD Espanyol de Barcelona",
+      "away": "Real Sociedad de Fútbol",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": [
+        "久保建英"
+      ]
+    },
+    {
+      "kickoffUTC": "2026-05-23T19:00:00Z",
+      "home": "Getafe CF",
+      "away": "CA Osasuna",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-23T19:00:00Z",
+      "home": "RCD Mallorca",
+      "away": "Real Oviedo",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-23T19:00:00Z",
+      "home": "Real Madrid CF",
+      "away": "Athletic Club",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-23T19:00:00Z",
+      "home": "Valencia CF",
+      "away": "FC Barcelona",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-23T19:00:00Z",
+      "home": "Girona FC",
+      "away": "Elche CF",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T13:00:00Z",
+      "home": "Parma Calcio 1913",
+      "away": "US Sassuolo Calcio",
+      "league": "Serie A",
+      "lClass": "l-serie",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Sunderland AFC",
+      "away": "Chelsea FC",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Brighton & Hove Albion FC",
+      "away": "Manchester United FC",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": [
+        "三笘薫"
+      ]
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Crystal Palace FC",
+      "away": "Arsenal FC",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": [
+        "鎌田大地",
+        "冨安健洋"
+      ]
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Burnley FC",
+      "away": "Wolverhampton Wanderers FC",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Fulham FC",
+      "away": "Newcastle United FC",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Liverpool FC",
+      "away": "Brentford FC",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": [
+        "遠藤航"
+      ]
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Manchester City FC",
+      "away": "Aston Villa FC",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Nottingham Forest FC",
+      "away": "AFC Bournemouth",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Tottenham Hotspur FC",
+      "away": "Everton FC",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "West Ham United FC",
+      "away": "Leeds United FC",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T16:00:00Z",
+      "home": "SSC Napoli",
+      "away": "Udinese Calcio",
+      "league": "Serie A",
+      "lClass": "l-serie",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T18:45:00Z",
+      "home": "AC Milan",
+      "away": "Cagliari Calcio",
+      "league": "Serie A",
+      "lClass": "l-serie",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T18:45:00Z",
+      "home": "Torino FC",
+      "away": "Juventus FC",
+      "league": "Serie A",
+      "lClass": "l-serie",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T18:45:00Z",
+      "home": "Hellas Verona FC",
+      "away": "AS Roma",
+      "league": "Serie A",
+      "lClass": "l-serie",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T18:45:00Z",
+      "home": "US Cremonese",
+      "away": "Como 1907",
+      "league": "Serie A",
+      "lClass": "l-serie",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T18:45:00Z",
+      "home": "US Lecce",
+      "away": "Genoa CFC",
+      "league": "Serie A",
+      "lClass": "l-serie",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-24T19:00:00Z",
+      "home": "Villarreal CF",
+      "away": "Club Atlético de Madrid",
+      "league": "LaLiga",
+      "lClass": "l-laliga",
+      "japanese": []
+    },
+    {
+      "kickoffUTC": "2026-05-30T16:00:00Z",
+      "home": "Paris Saint-Germain FC",
+      "away": "Arsenal FC",
+      "league": "Champions League",
+      "lClass": "l-champ",
+      "japanese": [
+        "伊東純也",
+        "冨安健洋"
+      ]
+    }
+  ]
+}
