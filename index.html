@@ -438,6 +438,7 @@ function setTab(tab, el) {
   currentTab = tab;
   document.querySelectorAll(".main-nav button").forEach(b => b.classList.remove("active"));
   el.classList.add("active");
+  history.replaceState(null, '', '#' + tab);
   render();
 }
 function applyFilter() {
