@@ -32,17 +32,14 @@ header { background:var(--surface); border-bottom:1px solid var(--border); }
 .updated b { color:var(--green); }
 
 /* MAIN NAV */
-.main-nav { 
-  display:flex; 
-  gap:2px; 
-  overflow-x: auto; /* タブだけ横スクロールを許可 */
-  -webkit-overflow-scrolling: touch; /* iPhoneで滑らかにスクロールさせる */
-  scrollbar-width: none; /* Firefox用: スクロールバーを隠す */
+.main-nav {
+  display:flex;
+  gap:2px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
-/* Chrome/Safari(iPhone)用: スクロールバーを隠してスッキリさせる */
-.main-nav::-webkit-scrollbar { 
-  display: none; 
-}
+.main-nav::-webkit-scrollbar { display: none; }
 .main-nav button {
   font-family:'Noto Sans JP',sans-serif; font-size:.8rem; font-weight:700;
   letter-spacing:.04em; padding:9px 20px;
@@ -215,7 +212,7 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
       <select id="leagueSel">
         <option value="all">🌍 全リーグ</option>
         <optgroup label="── 5大リーグ ──">
-          <option value="EPL">🏴󠁧󠁢󠁥󠁮󠁧󠁿 プレミアリーグ</option>
+          <option value="EPL">🏴󠁧󠁢󠁥󠁮󠁧󠁿 プレミア</option>
           <option value="LaLiga">🇪🇸 ラ・リーガ</option>
           <option value="Bundesliga">🇩🇪 ブンデスリーガ</option>
           <option value="Serie A">🇮🇹 セリエA</option>
@@ -241,108 +238,165 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
 
 <footer>
   <p>© 2025 海外サッカー日程 | データは参考情報です。正確な日程は各クラブ公式サイトでご確認ください。</p>
-  <p>Powered by football-data.org + GitHub Actions + GitHub Pages</p>
+  <p>Powered by RapidAPI + GitHub Actions + GitHub Pages</p>
 </footer>
 
 <script>
-// ── APIチーム名 → 日本語 ──
+// ── APIチーム名（短縮形）→ 日本語 ──
 const TEAM_JA = {
   // EPL
-  "Brighton & Hove Albion FC": "ブライトン",
-  "Manchester City FC":        "マンチェスターC",
-  "Arsenal FC":                "アーセナル",
-  "Everton FC":                "エバートン",
-  "Liverpool FC":              "リバプール",
-  "Wolverhampton Wanderers FC":"ウォルバーハンプトン",
-  "Crystal Palace FC":         "クリスタル・パレス",
-  "Chelsea FC":                "チェルシー",
-  "Tottenham Hotspur FC":      "トッテナム",
-  "Manchester United FC":      "マンチェスターU",
-  "Newcastle United FC":       "ニューカッスル",
-  "Aston Villa FC":            "アストン・ビラ",
-  "West Ham United FC":        "ウェストハム",
-  "Brentford FC":              "ブレントフォード",
-  "Fulham FC":                 "フラム",
-  "Nottingham Forest FC":      "ノッティンガムF",
-  "AFC Bournemouth":           "ボーンマス",
-  "Leicester City FC":         "レスター",
-  "Southampton FC":            "サウサンプトン",
-  "Ipswich Town FC":           "イプスウィッチ",
-  "Leeds United FC":           "リーズ",
-  "Sunderland AFC":            "サンダーランド",
-  "Burnley FC":                "バーンリー",
+  "Brighton":        "ブライトン",
+  "Liverpool":       "リバプール",
+  "Arsenal":         "アーセナル",
+  "Chelsea":         "チェルシー",
+  "Man City":        "マンC",
+  "Man United":      "マンU",
+  "Tottenham":       "トッテナム",
+  "Newcastle":       "ニューカッスル",
+  "Aston Villa":     "アストン・ビラ",
+  "West Ham":        "ウェストハム",
+  "Brentford":       "ブレントフォード",
+  "Fulham":          "フラム",
+  "Wolves":          "ウォルバーハンプトン",
+  "Nottm Forest":    "ノッティンガムF",
+  "Bournemouth":     "ボーンマス",
+  "Crystal Palace":  "クリスタル・パレス",
+  "Everton":         "エバートン",
+  "Leicester":       "レスター",
+  "Ipswich":         "イプスウィッチ",
+  "Southampton":     "サウサンプトン",
+  "Leeds":           "リーズ",
+  "Sunderland":      "サンダーランド",
+  "Burnley":         "バーンリー",
   // LaLiga
-  "Real Sociedad de Fútbol":   "レアル・ソシエダ",
-  "Getafe CF":                 "ヘタフェ",
-  "FC Barcelona":              "バルセロナ",
-  "Real Madrid CF":            "レアル・マドリード",
-  "Club Atlético de Madrid":   "アトレティコ",
-  "Valencia CF":               "バレンシア",
-  "Villarreal CF":             "ビジャレアル",
-  "Sevilla FC":                "セビージャ",
+  "Real Madrid":     "レアル・マドリード",
+  "Barcelona":       "バルセロナ",
+  "Atletico Madrid": "アトレティコ",
+  "Real Sociedad":   "ソシエダ",
+  "Villarreal":      "ビジャレアル",
+  "Sevilla":         "セビージャ",
+  "Valencia":        "バレンシア",
+  "Getafe":          "ヘタフェ",
+  "Athletic Club":   "アスレティック",
+  "Betis":           "ベティス",
+  "Osasuna":         "オサスナ",
+  "Girona":          "ジローナ",
+  "Mallorca":        "マジョルカ",
+  "Celta Vigo":      "セルタ",
+  "Alaves":          "アラベス",
+  "Las Palmas":      "ラス・パルマス",
+  "Espanyol":        "エスパニョール",
+  "Leganes":         "レガネス",
+  "Valladolid":      "バジャドリード",
   // Bundesliga
-  "SC Freiburg":               "フライブルク",
-  "Borussia Dortmund":         "ドルトムント",
-  "FC Bayern München":         "バイエルン",
-  "RB Leipzig":                "ライプツィヒ",
-  "Bayer 04 Leverkusen":       "レバークーゼン",
-  "VfB Stuttgart":             "シュトゥットガルト",
-  "TSG 1899 Hoffenheim":       "ホッフェンハイム",
-  // Ligue 1
-  "Stade de Reims":            "ランス",
-  "Paris Saint-Germain FC":    "パリSG",
-  "Olympique Lyonnais":        "リヨン",
-  "Olympique de Marseille":    "マルセイユ",
-  "AS Monaco FC":              "モナコ",
-  "RC Lens":                   "ランス（RC）",
-  // Eredivisie
-  "Feyenoord Rotterdam":       "フェイエノールト",
-  "AFC Ajax":                  "アヤックス",
-  // Scottish Prem
-  "Celtic FC":                 "セルティック",
-  "Livingston FC":             "リビングストン",
-  "Rangers FC":                "レンジャーズ",
+  "Bayern München":  "バイエルン",
+  "Dortmund":        "ドルトムント",
+  "Leipzig":         "ライプツィヒ",
+  "Leverkusen":      "レバークーゼン",
+  "Stuttgart":       "シュトゥットガルト",
+  "Frankfurt":       "フランクフルト",
+  "Freiburg":        "フライブルク",
+  "Wolfsburg":       "ヴォルフスブルク",
+  "Hoffenheim":      "ホッフェンハイム",
+  "Mainz":           "マインツ",
+  "Augsburg":        "アウクスブルク",
+  "Werder Bremen":   "ブレーメン",
+  "Bochum":          "ボーフム",
+  "Paderborn":       "パーダーボルン",
+  "Heidenheim":      "ハイデンハイム",
+  "Kiel":            "キール",
+  "Monchengladbach": "M・グラードバッハ",
+  "Union Berlin":    "ウニオン・ベルリン",
+  "Hertha":          "ヘルタ",
+  "Hamburger SV":    "ハンブルガーSV",
   // Serie A
-  "SS Lazio":                  "ラツィオ",
-  "AC Pisa 1909":              "ピサ",
-  "Parma Calcio 1913":         "パルマ",
-  "US Sassuolo Calcio":        "サッスオーロ",
-  "SSC Napoli":                "ナポリ",
-  "Udinese Calcio":            "ウディネーゼ",
-  "AC Milan":                  "ACミラン",
-  "Cagliari Calcio":           "カリアリ",
-  "Torino FC":                 "トリノ",
-  "Juventus FC":               "ユベントス",
-  "Hellas Verona FC":          "ヴェローナ",
-  "AS Roma":                   "ローマ",
-  "FC Internazionale Milano":  "インテル",
-  "Atalanta BC":               "アタランタ",
+  "Inter":           "インテル",
+  "Milan":           "ACミラン",
+  "Juventus":        "ユベントス",
+  "Napoli":          "ナポリ",
+  "Roma":            "ローマ",
+  "Lazio":           "ラツィオ",
+  "Atalanta":        "アタランタ",
+  "Fiorentina":      "フィオレンティーナ",
+  "Udinese":         "ウディネーゼ",
+  "Torino":          "トリノ",
+  "Cagliari":        "カリアリ",
+  "Parma":           "パルマ",
+  "Monza":           "モンツァ",
+  "Bologna":         "ボローニャ",
+  "Empoli":          "エンポリ",
+  "Genoa":           "ジェノア",
+  "Verona":          "ヴェローナ",
+  "Lecce":           "レッチェ",
+  "Venezia":         "ベネチア",
+  "Como":            "コモ",
+  // Ligue 1
+  "PSG":             "パリSG",
+  "Marseille":       "マルセイユ",
+  "Lyon":            "リヨン",
+  "Monaco":          "モナコ",
+  "Lens":            "ランス",
+  "Reims":           "ランス（ランス）",
+  "Lille":           "リール",
+  "Nice":            "ニース",
+  "Strasbourg":      "ストラスブール",
+  "Rennes":          "レンヌ",
+  "Nantes":          "ナント",
+  "Toulouse":        "トゥールーズ",
+  "Montpellier":     "モンペリエ",
+  "Brest":           "ブレスト",
+  "Le Havre":        "ル・アーブル",
+  "Saint-Etienne":   "サンテティエンヌ",
+  // CL/EL
+  "Celtic":          "セルティック",
+  "Rangers":         "レンジャーズ",
+  "Feyenoord":       "フェイエノールト",
+  "Ajax":            "アヤックス",
+  "PSV Eindhoven":   "PSV",
+  "Benfica":         "ベンフィカ",
+  "Sporting CP":     "スポルティング",
+  "Porto":           "ポルト",
+  "Braga":           "ブラガ",
+  "Slavia Prague":   "スラビア・プラハ",
+  "Shakhtar":        "シャフタール",
+  "Galatasaray":     "ガラタサライ",
+  "Besiktas":        "ベシクタシュ",
+  "Fenerbahce":      "フェネルバフチェ",
 };
 
 const LEAGUE_JA = {
-  "EPL":              "プレミアリーグ",
+  "EPL":              "プレミア",
   "LaLiga":           "ラ・リーガ",
-  "Bundesliga":       "ブンデスリーガ",
+  "Bundesliga":       "ブンデス",
   "Serie A":          "セリエA",
   "Ligue 1":          "リーグ・アン",
-  "Liga Portugal":    "プリメイラリーガ",
+  "Liga Portugal":    "プリメイラ",
   "Eredivisie":       "エールディビジ",
-  "Scottish Prem":    "スコティッシュ・プレム",
-  "Champions League": "チャンピオンズリーグ",
-  "Europa League":    "ヨーロッパリーグ",
+  "Scottish Prem":    "スコティッシュ",
+  "Champions League": "CL",
+  "Europa League":    "EL",
 };
 
 function teamJa(name) { return TEAM_JA[name] || name; }
 
+// 深夜0〜5時は前日の24〜29時として表示（日本のサッカー中継慣習）
 function toJST(utcStr) {
   const d = new Date(utcStr);
   const jst = new Date(d.getTime() + 9 * 60 * 60 * 1000);
-  return `${String(jst.getUTCHours()).padStart(2,'0')}:${String(jst.getUTCMinutes()).padStart(2,'0')}`;
+  let h = jst.getUTCHours();
+  const m = jst.getUTCMinutes();
+  if (h < 6) h += 24;
+  return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`;
 }
 
+// 深夜0〜5時は前日の日付グループに入れる
 function toJSTDate(utcStr) {
   const d = new Date(utcStr);
   const jst = new Date(d.getTime() + 9 * 60 * 60 * 1000);
+  if (jst.getUTCHours() < 6) {
+    const prev = new Date(jst.getTime() - 24 * 60 * 60 * 1000);
+    return prev.toISOString().split('T')[0];
+  }
   return jst.toISOString().split('T')[0];
 }
 
