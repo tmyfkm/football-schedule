@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-24 14:10",
+  "updatedAt": "2026-05-24 14:16",
   "matches": [
     {
       "kickoffUTC": "2026-05-24T13:00:00Z",
@@ -7,15 +7,6 @@
       "away": "Sassuolo",
       "league": "Serie A",
       "lClass": "l-serie",
-      "japanese": [],
-      "national": false
-    },
-    {
-      "kickoffUTC": "2026-05-24T15:00:00Z",
-      "home": "Sunderland",
-      "away": "Chelsea",
-      "league": "EPL",
-      "lClass": "l-epl",
       "japanese": [],
       "national": false
     },
@@ -57,13 +48,11 @@
     },
     {
       "kickoffUTC": "2026-05-24T15:00:00Z",
-      "home": "Liverpool",
-      "away": "Brentford",
+      "home": "Sunderland",
+      "away": "Chelsea",
       "league": "EPL",
       "lClass": "l-epl",
-      "japanese": [
-        "遠藤航"
-      ],
+      "japanese": [],
       "national": false
     },
     {
@@ -105,6 +94,17 @@
       "national": false
     },
     {
+      "kickoffUTC": "2026-05-24T15:00:00Z",
+      "home": "Liverpool",
+      "away": "Brentford",
+      "league": "EPL",
+      "lClass": "l-epl",
+      "japanese": [
+        "遠藤航"
+      ],
+      "national": false
+    },
+    {
       "kickoffUTC": "2026-05-24T16:00:00Z",
       "home": "Napoli",
       "away": "Udinese",
@@ -133,15 +133,6 @@
     },
     {
       "kickoffUTC": "2026-05-24T18:45:00Z",
-      "home": "Verona",
-      "away": "Roma",
-      "league": "Serie A",
-      "lClass": "l-serie",
-      "japanese": [],
-      "national": false
-    },
-    {
-      "kickoffUTC": "2026-05-24T18:45:00Z",
       "home": "Milan",
       "away": "Cagliari",
       "league": "Serie A",
@@ -153,6 +144,15 @@
       "kickoffUTC": "2026-05-24T18:45:00Z",
       "home": "Lecce",
       "away": "Genoa",
+      "league": "Serie A",
+      "lClass": "l-serie",
+      "japanese": [],
+      "national": false
+    },
+    {
+      "kickoffUTC": "2026-05-24T18:45:00Z",
+      "home": "Verona",
+      "away": "Roma",
       "league": "Serie A",
       "lClass": "l-serie",
       "japanese": [],
