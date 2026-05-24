@@ -23,6 +23,7 @@ jobs:
         run: node scripts/fetch.js
         env:
           DAIHYO: ${{ secrets.DAIHYO }}
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
 
       - name: Commit and push
         run: |
