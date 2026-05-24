@@ -22,7 +22,6 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Noto Sans JP',sans-serif; background:var(--main-bg); color:var(--text); min-height:100vh; }
 
-/* HEADER */
 header { background:var(--surface); border-bottom:1px solid var(--border); }
 .header-inner { max-width:1100px; margin:0 auto; padding:16px 20px 0; }
 .site-title { display:flex; align-items:center; gap:12px; padding-bottom:14px; }
@@ -31,11 +30,7 @@ header { background:var(--surface); border-bottom:1px solid var(--border); }
 .updated { margin-left:auto; font-size:.68rem; color:var(--muted); text-align:right; line-height:1.6; }
 .updated b { color:var(--green); }
 
-/* MAIN NAV ② overflow削除・flex:1で3等分 */
-.main-nav {
-  display:flex;
-  gap:2px;
-}
+.main-nav { display:flex; gap:2px; }
 .main-nav button {
   font-family:'Noto Sans JP',sans-serif; font-size:.8rem; font-weight:700;
   letter-spacing:.04em; padding:9px 12px;
@@ -47,7 +42,6 @@ header { background:var(--surface); border-bottom:1px solid var(--border); }
 .main-nav button:hover { color:var(--text); }
 .main-nav button.active { color:#fff; border-bottom-color:var(--accent); background:rgba(230,51,35,.06); }
 
-/* FILTER BAR */
 .filter-bar { background:var(--surf2); border-bottom:1px solid var(--border); }
 .filter-inner {
   max-width:1100px; margin:0 auto; padding:8px 20px;
@@ -65,13 +59,6 @@ header { background:var(--surface); border-bottom:1px solid var(--border); }
   outline:none; cursor:pointer; -webkit-appearance:none;
 }
 .f-select select option { background:#182035; }
-.btn-apply {
-  background:var(--accent); color:#fff; border:none;
-  border-radius:6px; padding:6px 16px;
-  font-family:'Noto Sans JP',sans-serif; font-size:.78rem; font-weight:700;
-  cursor:pointer; transition:opacity .2s;
-}
-.btn-apply:hover { opacity:.85; }
 .btn-reset {
   background:transparent; color:var(--muted); border:1px solid var(--border);
   border-radius:6px; padding:6px 12px;
@@ -79,10 +66,8 @@ header { background:var(--surface); border-bottom:1px solid var(--border); }
 }
 .btn-reset:hover { color:var(--text); border-color:var(--muted); }
 
-/* MAIN */
 main { max-width:1100px; margin:0 auto; padding:16px 20px 60px; background:var(--main-bg); }
 
-/* ローディング */
 .loading { text-align:center; padding:60px 20px; color:var(--muted); }
 .loading .spinner {
   width:32px; height:32px; border:3px solid var(--border);
@@ -91,7 +76,6 @@ main { max-width:1100px; margin:0 auto; padding:16px 20px 60px; background:var(-
 }
 @keyframes spin { to { transform:rotate(360deg); } }
 
-/* 日付ヘッダー */
 .day-header { display:flex; align-items:center; gap:10px; margin:20px 0 5px; }
 .day-header:first-child { margin-top:0; }
 .day-label {
@@ -120,7 +104,6 @@ main { max-width:1100px; margin:0 auto; padding:16px 20px 60px; background:var(-
 .match-row:hover { border-color:rgba(230,51,35,.4); background:var(--surf2); }
 .match-row:hover::before { background:var(--accent); }
 
-/* 時刻セル */
 .m-time {
   padding:0 6px; text-align:center;
   border-right:1px solid var(--border);
@@ -128,17 +111,30 @@ main { max-width:1100px; margin:0 auto; padding:16px 20px 60px; background:var(-
 }
 .m-kick { font-family:'Bebas Neue',sans-serif; font-size:1.05rem; letter-spacing:.04em; line-height:1; }
 
-/* メインセル */
-.m-main { padding:5px 12px; display:flex; flex-direction:column; gap:3px; justify-content:center; }
+/* メインセル：左右レイアウト */
+.m-main {
+  padding:5px 12px;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.m-left { display:flex; flex-direction:column; gap:3px; justify-content:center; min-width:0; flex:1; }
 .m-top  { display:flex; align-items:center; gap:8px; white-space:nowrap; overflow:hidden; }
 .m-teams-inline {
   font-size:.82rem; font-weight:700;
   display:flex; align-items:center; gap:5px; overflow:hidden;
 }
 .m-vs { font-size:.62rem; color:var(--muted); font-weight:400; flex-shrink:0; }
-.m-bottom { display:flex; flex-wrap:wrap; gap:4px; padding-left:2px; }
 
-/* リーグバッジ */
+/* 選手タグ：右側に配置 */
+.m-right {
+  display:flex; flex-wrap:wrap; gap:4px;
+  justify-content:flex-end; align-items:center;
+  flex-shrink:0; max-width:200px;
+}
+
 .l-badge {
   display:inline-block; padding:2px 7px; border-radius:3px;
   font-size:.63rem; font-weight:700; letter-spacing:.03em; white-space:nowrap; flex-shrink:0;
@@ -154,7 +150,6 @@ main { max-width:1100px; margin:0 auto; padding:16px 20px 60px; background:var(-
 .l-champ  { background:rgba(200,160,0,.12);  color:#d4b020; border:1px solid rgba(200,160,0,.2); }
 .l-uel    { background:rgba(240,80,0,.12);   color:#f09060; border:1px solid rgba(240,80,0,.2); }
 
-/* 選手タグ */
 .p-tag {
   display:inline-block;
   background:rgba(245,200,66,.07); border:1px solid rgba(245,200,66,.15);
@@ -162,11 +157,9 @@ main { max-width:1100px; margin:0 auto; padding:16px 20px 60px; background:var(-
   font-size:.68rem; color:#c89c18; font-weight:700; white-space:nowrap;
 }
 
-/* 空・エラー */
 .empty { text-align:center; padding:50px 20px; color:var(--muted); }
 .empty .ico { font-size:2.4rem; margin-bottom:10px; }
 
-/* フッター */
 footer { text-align:center; padding:16px; border-top:1px solid var(--border); background:var(--main-bg); font-size:.66rem; color:var(--muted); letter-spacing:.05em; line-height:1.8; }
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
@@ -175,6 +168,7 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
   .updated { display:none; }
   .site-title h1 { font-size:1.3rem; }
   .m-teams-inline { font-size:.76rem; }
+  .m-right { display:none; }
 }
 </style>
 </head>
@@ -194,7 +188,6 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
     </div>
   </div>
   <nav class="main-nav">
-    <!-- ① 欧州全日程 → 欧州日程 -->
     <button class="active" onclick="setTab('europe',this)">🌍 欧州日程</button>
     <button onclick="setTab('japanese',this)">🇯🇵 日本人日程</button>
     <button onclick="setTab('national',this)">🏆 代表戦日程</button>
@@ -239,8 +232,48 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
 </footer>
 
 <script>
+// ── 選手名 英語→日本語 ──
+const PLAYER_JA = {
+  "Kaoru Mitoma":      "三笘薫",
+  "Wataru Endo":       "遠藤航",
+  "Takefusa Kubo":     "久保建英",
+  "Daizen Maeda":      "前田大然",
+  "Kyogo Furuhashi":   "古橋亨梧",
+  "Ayase Ueda":        "上田綺世",
+  "Keito Nakamura":    "中村敬斗",
+  "Takumi Minamino":   "南野拓実",
+  "Ritsu Doan":        "堂安律",
+  "Hiroki Ito":        "伊藤洋輝",
+  "Ko Itakura":        "板倉滉",
+  "Mao Hosoya":        "細谷真大",
+  "Yukinari Sugawara": "菅原由勢",
+  "Takehiro Tomiyasu": "冨安健洋",
+  "Reo Hatate":        "旗手怜央",
+  "Yuki Kobayashi":    "小林友希",
+  "Shogo Taniguchi":   "谷口彰悟",
+  "Ao Tanaka":         "田中碧",
+  "Junya Ito":         "伊東純也",
+  "Yuki Soma":         "相馬勇紀",
+  "Tomoki Iwata":      "岩田智輝",
+  "Shogo Asano":       "浅野拓磨",
+  "Koji Miyoshi":      "三好康児",
+  "Daichi Kamada":     "鎌田大地",
+  "Hidemasa Morita":   "守田英正",
+  "Shuichi Gonda":     "権田修一",
+  "Zion Suzuki":       "鈴木彩艶",
+  "Kazunari Kita":     "喜田拓也",
+  "Koki Machida":      "町田浩樹",
+  "Kento Shiogai":     "塩谷司",
+  "Sota Kawasaki":     "川崎颯太",
+  "Kaishu Sano":       "佐野海舟",
+  "Yuya Osako":        "大迫勇也",
+  "Kou Itakura":       "板倉滉",
+};
+
+function playerJa(name) { return PLAYER_JA[name] || name; }
+
+// ── チーム名 英語→日本語 ──
 const TEAM_JA = {
-  // EPL
   "Brighton Hove":   "ブライトン",
   "Nottingham":      "ノッティンガム",
   "Wolverhampton":   "ウルヴス",
@@ -268,7 +301,6 @@ const TEAM_JA = {
   "Leeds":           "リーズ",
   "Sunderland":      "サンダーランド",
   "Burnley":         "バーンリー",
-  // LaLiga
   "Atleti":          "アトレティコ",
   "Real Madrid":     "レアル・マドリード",
   "Barcelona":       "バルセロナ",
@@ -289,7 +321,6 @@ const TEAM_JA = {
   "Espanyol":        "エスパニョール",
   "Leganes":         "レガネス",
   "Valladolid":      "バジャドリード",
-  // Bundesliga
   "Bayern München":  "バイエルン",
   "Dortmund":        "ドルトムント",
   "Leipzig":         "ライプツィヒ",
@@ -310,7 +341,6 @@ const TEAM_JA = {
   "Union Berlin":    "ウニオン・ベルリン",
   "Hertha":          "ヘルタ",
   "Hamburger SV":    "ハンブルガーSV",
-  // Serie A
   "Como 1907":       "コモ1907",
   "Cremonese":       "クレモネーゼ",
   "Sassuolo":        "サッスオーロ",
@@ -334,7 +364,6 @@ const TEAM_JA = {
   "Lecce":           "レッチェ",
   "Venezia":         "ベネチア",
   "Como":            "コモ",
-  // Ligue 1
   "PSG":             "パリSG",
   "Marseille":       "マルセイユ",
   "Lyon":            "リヨン",
@@ -351,7 +380,6 @@ const TEAM_JA = {
   "Brest":           "ブレスト",
   "Le Havre":        "ル・アーブル",
   "Saint-Etienne":   "サンテティエンヌ",
-  // CL/EL
   "Celtic":          "セルティック",
   "Rangers":         "レンジャーズ",
   "Feyenoord":       "フェイエノールト",
@@ -366,7 +394,6 @@ const TEAM_JA = {
   "Galatasaray":     "ガラタサライ",
   "Besiktas":        "ベシクタシュ",
   "Fenerbahce":      "フェネルバフチェ",
-  // 代表戦
   "Netherlands":     "オランダ",
   "Japan":           "日本",
   "Tunisia":         "チュニジア",
@@ -457,16 +484,12 @@ function toJSTDate(utcStr) {
   return jst.toISOString().split('T')[0];
 }
 
-function isFinished(kickoffUTC) {
-  return false;
-}
+function isFinished(kickoffUTC) { return false; }
 
 const DATA_URL = 'data/matches.json';
 let MATCHES = [];
-
 let currentTab = "europe", fLeague = "all";
 
-// URLハッシュからタブを復元
 const hash = location.hash.replace('#', '');
 if (['europe', 'japanese', 'national'].includes(hash)) {
   currentTab = hash;
@@ -475,7 +498,6 @@ if (['europe', 'japanese', 'national'].includes(hash)) {
   });
 }
 
-// ③ ページ読み込み時にハッシュがnationalならフィルターを隠す
 if (currentTab === "national") {
   document.querySelector(".filter-bar").style.display = "none";
 }
@@ -497,7 +519,6 @@ async function loadData() {
   }
 }
 
-// ③ タブ切り替え時にフィルターバーの表示を制御
 function setTab(tab, el) {
   currentTab = tab;
   document.querySelectorAll(".main-nav button").forEach(b => b.classList.remove("active"));
@@ -562,19 +583,27 @@ function render() {
       const homeJa   = teamJa(m.home);
       const awayJa   = teamJa(m.away);
       const jstTime  = toJST(m.kickoffUTC);
-      const pHtml    = (m.japanese && m.japanese.length > 0)
-        ? `<div class="m-bottom">${m.japanese.map(n=>`<span class="p-tag">${n}</span>`).join("")}</div>`
+
+      // 選手名を日本語に変換
+      const playersJa = (m.japanese && m.japanese.length > 0)
+        ? m.japanese.map(n => playerJa(n))
+        : [];
+
+      const pHtml = playersJa.length > 0
+        ? `<div class="m-right">${playersJa.map(n => `<span class="p-tag">${n}</span>`).join("")}</div>`
         : "";
 
       html += `<div class="match-row" style="animation-delay:${i*.04}s">
         <div class="m-time"><div class="m-kick">${jstTime}</div></div>
         <div class="m-main">
-          <div class="m-top">
-            <span class="l-badge ${m.lClass}">${leagueJa}</span>
-            <div class="m-teams-inline">
-              <span>${homeJa}</span>
-              <span class="m-vs">vs</span>
-              <span>${awayJa}</span>
+          <div class="m-left">
+            <div class="m-top">
+              <span class="l-badge ${m.lClass}">${leagueJa}</span>
+              <div class="m-teams-inline">
+                <span>${homeJa}</span>
+                <span class="m-vs">vs</span>
+                <span>${awayJa}</span>
+              </div>
             </div>
           </div>
           ${pHtml}
