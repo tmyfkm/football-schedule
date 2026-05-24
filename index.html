@@ -209,7 +209,7 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
     <span class="f-label">リーグ</span>
     <div class="f-select">
       <span style="font-size:.85rem">🏟</span>
-      <select id="leagueSel">
+      <select id="leagueSel" onchange="applyFilter()">
         <option value="all">🌍 全リーグ</option>
         <optgroup label="── 5大リーグ ──">
           <option value="EPL">🏴󠁧󠁢󠁥󠁮󠁧󠁿 プレミア</option>
