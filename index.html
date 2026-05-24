@@ -238,18 +238,17 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
 
 <footer>
   <p>© 2025 海外サッカー日程 | データは参考情報です。正確な日程は各クラブ公式サイトでご確認ください。</p>
-  <p>Powered by RapidAPI + GitHub Actions + GitHub Pages</p>
+  <p>Powered by football-data.org + GitHub Actions + GitHub Pages</p>
 </footer>
 
 <script>
-// ── APIチーム名（短縮形）→ 日本語 ──
 const TEAM_JA = {
   // EPL
+  "Brighton Hove":   "ブライトン",
   "Nottingham":      "ノッティンガム",
   "Wolverhampton":   "ウルヴス",
   "Leeds United":    "リーズ",
   "Brighton":        "ブライトン",
-  "Brighton Hove":　 "ブライトン",
   "Liverpool":       "リバプール",
   "Arsenal":         "アーセナル",
   "Chelsea":         "チェルシー",
@@ -383,11 +382,11 @@ const LEAGUE_JA = {
   "Scottish Prem":    "スコティッシュ",
   "Champions League": "CL",
   "Europa League":    "EL",
+  "World Cup":        "W杯",
 };
 
 function teamJa(name) { return TEAM_JA[name] || name; }
 
-// 深夜0〜5時は前日の24〜29時として表示（日本のサッカー中継慣習）
 function toJST(utcStr) {
   const d = new Date(utcStr);
   const jst = new Date(d.getTime() + 9 * 60 * 60 * 1000);
@@ -397,7 +396,6 @@ function toJST(utcStr) {
   return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`;
 }
 
-// 深夜0〜5時は前日の日付グループに入れる
 function toJSTDate(utcStr) {
   const d = new Date(utcStr);
   const jst = new Date(d.getTime() + 9 * 60 * 60 * 1000);
@@ -412,10 +410,23 @@ function isFinished(kickoffUTC) {
   return false;
 }
 
-// ── JSONデータ読み込み ──
 const DATA_URL = 'data/matches.json';
 let MATCHES = [];
-  
+
+let currentTab = "europe", fLeague = "all";
+
+// URLハッシュからタブを復元
+const hash = location.hash.replace('#', '');
+if (['europe', 'japanese', 'national'].includes(hash)) {
+  currentTab = hash;
+  document.querySelectorAll(".main-nav button").forEach(b => {
+    b.classList.toggle("active", b.getAttribute("onclick").includes(hash));
+  });
+}
+
+const todayJST = toJSTDate(new Date().toISOString());
+const DOW = ["日","月","火","水","木","金","土"];
+
 async function loadData() {
   try {
     const res = await fetch(DATA_URL + '?t=' + Date.now());
@@ -430,18 +441,6 @@ async function loadData() {
   }
 }
 
-let currentTab = "europe", fLeague = "all";
-// URLハッシュからタブを復元
-const hash = location.hash.replace('#', '');
-if (['europe', 'japanese', 'national'].includes(hash)) {
-  currentTab = hash;
-  document.querySelectorAll(".main-nav button").forEach(b => {
-    b.classList.toggle("active", b.getAttribute("onclick").includes(hash));
-  });
-}
-const todayJST = toJSTDate(new Date().toISOString());
-const DOW = ["日","月","火","水","木","金","土"];
-
 function setTab(tab, el) {
   currentTab = tab;
   document.querySelectorAll(".main-nav button").forEach(b => b.classList.remove("active"));
@@ -449,10 +448,12 @@ function setTab(tab, el) {
   history.replaceState(null, '', '#' + tab);
   render();
 }
+
 function applyFilter() {
   fLeague = document.getElementById("leagueSel").value;
   render();
 }
+
 function resetFilter() {
   fLeague = "all";
   document.getElementById("leagueSel").value = "all";
@@ -527,10 +528,8 @@ function render() {
   document.getElementById("content").innerHTML = html;
 }
 
-// 初回読み込み＆1時間おきに再取得
 loadData();
 setInterval(loadData, 60 * 60 * 1000);
-// 表示は1分おきに更新（終了試合の除外など）
 setInterval(render, 60 * 1000);
 </script>
 </body>
