@@ -20,9 +20,10 @@ const COMPETITION_MAP = {
   'ELC': { key: 'Championship',     lClass: 'l-champ2', national: false },
   'CL':  { key: 'Champions League', lClass: 'l-champ',  national: false },
   'EL':  { key: 'Europa League',    lClass: 'l-uel',    national: false },
+  'WC':  { key: 'World Cup',        lClass: 'l-champ',  national: true  },
 };
 
-const NATIONAL_CODES = new Set(['WC', 'EC', 'WCQ', 'ECQ', 'AFCQ', 'AFC', 'INT']);
+const NATIONAL_CODES = new Set(['EC', 'WCQ', 'ECQ', 'AFCQ', 'AFC', 'INT']);
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 function toDateStr(d) { return d.toISOString().split('T')[0]; }
@@ -85,7 +86,9 @@ async function fetchBelgiumMatches() {
   if (!data) return [];
   const fixtures = data.response || [];
   console.log(`  ベルギー: ${fixtures.length}件取得`);
-  return fixtures.map(f => ({
+  const upcoming = fixtures.filter(f => f.fixture?.status?.short === 'NS');
+  console.log(`  ベルギー未来: ${upcoming.length}件`);
+  return upcoming.map(f => ({
     kickoffUTC: f.fixture.date,
     home:       f.teams.home.name,
     away:       f.teams.away.name,
