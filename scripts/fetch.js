@@ -79,8 +79,8 @@ async function fetchWorldCupMatches() {
 // ── ベルギーリーグ取得（api-football） league=144 ──
 async function fetchBelgiumMatches() {
   console.log('\n🇧🇪 ベルギーリーグデータ取得開始 (api-football)...');
-  const season = new Date().getFullYear();
   const data = await apiFetchFootball(`/fixtures?league=144&season=2025`);
+  console.log('APIレスポンス:', JSON.stringify(data).slice(0, 500));
   if (!data) return [];
   const fixtures = data.response || [];
   console.log(`  ベルギー: ${fixtures.length}件取得`);
