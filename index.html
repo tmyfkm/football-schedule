@@ -126,6 +126,13 @@ main { max-width:1100px; margin:0 auto; padding:16px 20px 60px; background:var(-
   font-size:.82rem; font-weight:700;
   display:grid;
   grid-template-columns: 1fr 28px 1fr;
+  align-items:center; gap:4px;
+  flex:1;
+}
+.m-teams-inline span:first-child { text-align:right; }
+.m-teams-inline span:last-child  { text-align:left; }
+.m-vs { font-size:.62rem; color:var(--muted); font-weight:400; text-align:center; }
+  grid-template-columns: 1fr 28px 1fr;
   align-items:center; gap:4px; width:100%;
 }
 .m-vs { font-size:.62rem; color:var(--muted); font-weight:400; text-align:center; }
