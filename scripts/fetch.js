@@ -121,6 +121,8 @@ async function fetchMatches(dateFrom, dateTo) {
 
 // ── メイン ──
 async function main() {
+  const testRes = await apiFetch('/competitions');
+  console.log(JSON.stringify(testRes?.competitions?.map(c => ({ id: c.id, code: c.code, name: c.name })), null, 2));
   if (!apiKey) {
     console.error('❌ 環境変数 DAIHYO が設定されていません');
     process.exit(1);
