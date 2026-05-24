@@ -240,22 +240,21 @@ async function main() {
 async function testSportDB() {
   const key = process.env.SPORTDB_KEY;
   if (!key) { console.log('SPORTDB_KEY なし'); return; }
-
   console.log('\n🧪 SportDB テスト開始...');
 
-  // ベルギーリーグ
-  const r1 = await fetch('https://api.sportdb.dev/api/football/belgium/jupiler-pro-league/2025-2026/fixtures', {
+  // 国一覧を確認
+  const r0 = await fetch('https://api.sportdb.dev/api/football/countries', {
+    headers: { 'X-API-Key': key }
+  });
+  const d0 = await r0.json();
+  console.log('国一覧:', JSON.stringify(d0).slice(0, 500));
+
+  // ベルギーのリーグ一覧
+  const r1 = await fetch('https://api.sportdb.dev/api/football/belgium', {
     headers: { 'X-API-Key': key }
   });
   const d1 = await r1.json();
-  console.log('ベルギー:', JSON.stringify(d1).slice(0, 300));
-
-  // 親善試合
-  const r2 = await fetch('https://api.sportdb.dev/api/football/international/friendlies/2026/fixtures', {
-    headers: { 'X-API-Key': key }
-  });
-  const d2 = await r2.json();
-  console.log('親善試合:', JSON.stringify(d2).slice(0, 300));
+  console.log('ベルギー:', JSON.stringify(d1).slice(0, 500));
 }
 
 main()
