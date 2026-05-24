@@ -35,14 +35,12 @@ header { background:var(--surface); border-bottom:1px solid var(--border); }
 .main-nav {
   display:flex;
   gap:2px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
 }
-.main-nav::-webkit-scrollbar { display: none; }
 .main-nav button {
   font-family:'Noto Sans JP',sans-serif; font-size:.8rem; font-weight:700;
-  letter-spacing:.04em; padding:9px 20px;
+  letter-spacing:.04em; padding:9px 12px;
+  flex:1;                         /* 3等分 */
+  text-align:center;
   background:transparent; color:var(--muted);
   border:none; border-bottom:3px solid transparent;
   cursor:pointer; transition:all .2s; white-space:nowrap;
@@ -197,7 +195,7 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
     </div>
   </div>
   <nav class="main-nav">
-    <button class="active" onclick="setTab('europe',this)">🌍 欧州全日程</button>
+    <button class="active" onclick="setTab('europe',this)">🌍 欧州日程</button>
     <button onclick="setTab('japanese',this)">🇯🇵 日本人日程</button>
     <button onclick="setTab('national',this)">🏆 代表戦日程</button>
   </nav>
@@ -499,6 +497,8 @@ function setTab(tab, el) {
   document.querySelectorAll(".main-nav button").forEach(b => b.classList.remove("active"));
   el.classList.add("active");
   history.replaceState(null, '', '#' + tab);
+  // ↓ 追加：代表戦タブはフィルターバーを隠す
+  document.querySelector(".filter-bar").style.display = tab === "national" ? "none" : "";
   render();
 }
 
