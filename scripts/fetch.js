@@ -238,26 +238,7 @@ async function main() {
   allMatches.push(...worldCupMatches);
 
   // ── 重複排除・ソート ──
-  const seen = new Set();
-  const unique = allMatches.filter(m => {
-    const key = `${m.kickoffUTC}|${m.home}|${m.away}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
   
-  unique.sort((a, b) => a.kickoffUTC.localeCompare(b.kickoffUTC));
-
-  const jstStr = new Date(now.getTime() + 9 * 60 * 60 * 1000)
-    .toISOString().replace('T', ' ').slice(0, 16);
-
-  fs.writeFileSync(
-    'data/matches.json',
-    JSON.stringify({ updatedAt: jstStr, matches: unique }, null, 2)
-  );
-
-  console.log(`\n✅ 保存完了: ${unique.length}試合 (うちW杯: ${worldCupMatches.length}試合)`);
-}
-
 async function testSportDB() {
   const key = process.env.SPORTDB_KEY;
   if (!key) { console.log('SPORTDB_KEY なし'); return; }
