@@ -56,24 +56,24 @@ const RAPID_LEAGUES = [
 ];
 
 // ────────────────────────────────────────────────
-// football-data.org 代表戦（World Cup のみ、失敗時RapidAPIフォールバック）
+// football-data.org 代表戦（男子 World Cup のみ、失敗時RapidAPIフォールバック）
 // ────────────────────────────────────────────────
 const FD_NATIONAL = [
-  { id: 2000, key: 'World Cup',       lClass: 'l-wc', tab: 'national', gender: 'male',   national: true },
-  { id: 2077, key: 'Women World Cup', lClass: 'l-wc', tab: 'national', gender: 'female', national: true },
+  { id: 2000, key: 'World Cup', lClass: 'l-wc', tab: 'national', gender: 'male', national: true },
 ];
 
 // FD失敗時のRapidAPIフォールバック用
 const RAPID_NATIONAL_FALLBACK = {
-  'World Cup':       { id: 77, lClass: 'l-wc', tab: 'national', gender: 'male',   national: true },
-  'Women World Cup': { id: 76, lClass: 'l-wc', tab: 'national', gender: 'female', national: true },
+  'World Cup': { id: 77, lClass: 'l-wc', tab: 'national', gender: 'male', national: true },
 };
 
 // ────────────────────────────────────────────────
 // RapidAPI のみで取得する代表戦
-// （Nations League・Euro・AFC Asian Cup・AFCON 男女）
+// （Women World Cup・Nations League・Euro・AFC Asian Cup・AFCON 男女）
 // ────────────────────────────────────────────────
 const RAPID_NATIONAL = [
+  // World Cup
+  { id: 76, key: 'Women World Cup', lClass: 'l-wc', tab: 'national', gender: 'female', national: true },
   // Nations League
   { id: 9806,  key: 'Nations League A',   lClass: 'l-champ', tab: 'national', gender: 'male',   national: true },
   { id: 9807,  key: 'Nations League B',   lClass: 'l-champ', tab: 'national', gender: 'male',   national: true },
@@ -311,8 +311,8 @@ async function rapidFetchMatches(league, playerMap, crestMap) {
 
 // ────────────────────────────────────────────────
 // 代表戦取得
-//   FD担当: World Cup / Women World Cup（失敗時RapidAPIフォールバック）
-//   Rapid担当: Nations League・Euro・AFC Asian Cup・AFCON（男女）
+//   FD担当: 男子 World Cup のみ（失敗時RapidAPIフォールバック）
+//   Rapid担当: Women World Cup・Nations League・Euro・AFC Asian Cup・AFCON（男女）
 // ────────────────────────────────────────────────
 async function fetchNationalMatches(playerMap, crestMap) {
   console.log('\n🌍 代表戦データ取得中...');
