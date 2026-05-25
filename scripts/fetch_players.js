@@ -1,13 +1,15 @@
 // scripts/fetch_players.js
 // RapidAPI から日本人選手マップを取得し data/players.json に保存（月1実行想定）
 // 実行: RAPIDAPI_KEY=xxx node scripts/fetch_players.js
+// 強制更新: RAPIDAPI_KEY=xxx FORCE_UPDATE=1 node scripts/fetch_players.js
 
 'use strict';
 const fs = require('fs');
 
-const RAPID_KEY  = process.env.RAPIDAPI_KEY;
-const RAPID_HOST = 'free-api-live-football-data.p.rapidapi.com';
-const BASE_URL   = `https://${RAPID_HOST}`;
+const RAPID_KEY    = process.env.RAPIDAPI_KEY;
+const RAPID_HOST   = 'free-api-live-football-data.p.rapidapi.com';
+const BASE_URL     = `https://${RAPID_HOST}`;
+const FORCE_UPDATE = process.env.FORCE_UPDATE === '1';
 
 if (!RAPID_KEY) {
   console.error('❌ 環境変数 RAPIDAPI_KEY が未設定');
@@ -112,6 +114,20 @@ async function fetchJapanesePlayers(teamId) {
 async function main() {
   if (!fs.existsSync('data')) fs.mkdirSync('data');
 
+  const CACHE_PATH = 'data/players.json';
+
+  // キャッシュチェック（手動実行時はキャッシュがあればスキップ）
+  if (!FORCE_UPDATE && fs.existsSync(CACHE_PATH)) {
+    const cached = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf-8'));
+    const teamCount   = Object.keys(cached.players || {}).length;
+    const playerCount = Object.values(cached.players || {}).flat().length;
+    console.log(`\n📋 選手データキャッシュ読み込み: ${teamCount}チーム / ${playerCount}人 (更新: ${cached.updatedAt})`);
+    console.log('💡 強制更新する場合は FORCE_UPDATE=1 を付けて実行してください。');
+    return;
+  }
+
+  if (FORCE_UPDATE) console.log('\n🔄 FORCE_UPDATE=1: キャッシュを無視して取得します。');
+
   // Step1: 全リーグのチームを収集（チームIDの重複を除去）
   console.log(`\n📋 チーム一覧取得 (${TARGET_LEAGUES.length}リーグ)...\n`);
   const teamMap = {}; // id → name
@@ -155,7 +171,7 @@ async function main() {
   // 保存
   const jstStr = new Date(Date.now() + 9*60*60*1000)
     .toISOString().replace('T', ' ').slice(0, 16);
-  fs.writeFileSync('data/players.json', JSON.stringify({
+  fs.writeFileSync(CACHE_PATH, JSON.stringify({
     updatedAt: jstStr,
     players: playerMap,
   }, null, 2));
