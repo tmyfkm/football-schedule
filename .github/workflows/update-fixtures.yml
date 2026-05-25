@@ -1,0 +1,22 @@
+name: Update fixtures data
+
+on:
+  workflow_dispatch: # 手動実行できる
+  schedule:
+    - cron: '0 6 * * *'  # 毎日6時に自動実行したい場合（任意）
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをcheckout
+        uses: actions/checkout@v3
+
+      - name: fixtures.csvをダウンロード
+        run: curl -L -o data/fixtures.csv "https://github.com/eatpizzanot/soccer-dataset/raw/main/csv/fixtures.csv"
+
+      - name: 追加ファイルをpush
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "自動更新: fixtures.csv"
+          branch: dev  # devブランチの場合。mainならmain
