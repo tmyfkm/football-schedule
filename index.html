@@ -231,31 +231,29 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
   </div>
   <div class="nav-rows">
     <nav class="main-nav nav-row1">
-    <button id="tab-europe"   onclick="setTab('europe',this)"  >🌍 欧州日程</button>
-    <button id="tab-japanese" onclick="setTab('japanese',this)">🇯🇵 日本人日程</button>
-    <button id="tab-national" onclick="setTab('national',this)">🏆 代表戦日程</button>
-  </nav>
+      <button id="tab-europe"   onclick="setTab('europe',this)"  >🌍 欧州日程</button>
+      <button id="tab-japanese" onclick="setTab('japanese',this)">🇯🇵 日本人日程</button>
+      <button id="tab-national" onclick="setTab('national',this)">🏆 代表戦日程</button>
+    </nav>
     <nav class="main-nav nav-row2">
       <button id="tab-middle"   onclick="setTab('middle',this)"  >🕌 中東日程</button>
-    <button id="tab-north"    onclick="setTab('north',this)"   >🌎 北米日程</button>
-    <button id="tab-youth"    onclick="setTab('youth',this)"   >🌱 ユース代表</button>
-  </nav>
+      <button id="tab-north"    onclick="setTab('north',this)"   >🌎 北米日程</button>
+      <button id="tab-youth"    onclick="setTab('youth',this)"   >🌱 ユース代表</button>
+    </nav>
   </div>
 </div>
 </header>
 
-<!-- 性別トグル（national/youth/europe/japanese/northで表示） -->
 <div class="gender-bar" id="genderBar" style="display:none">
   <div class="gender-inner">
     <span class="f-label">カテゴリ</span>
     <div class="gender-toggle">
-      <button id="gBtn-male"   onclick="setGender('male',this)"  class="active">♂ 男子</button>
-      <button id="gBtn-female" onclick="setGender('female',this)"            >♀ 女子</button>
+      <button id="gBtn-male"   onclick="setGender('male',this)"   class="active">♂ 男子</button>
+      <button id="gBtn-female" onclick="setGender('female',this)"              >♀ 女子</button>
     </div>
   </div>
 </div>
 
-<!-- リーグフィルター（europe / japanese / middle / north タブで表示） -->
 <div class="filter-bar" id="filterBar" style="display:none">
   <div class="filter-inner">
     <span class="f-label">リーグ</span>
@@ -426,7 +424,6 @@ const TEAM_JA = {
   "Galatasaray":     "ガラタサライ",
   "Besiktas":        "ベシクタシュ",
   "Fenerbahce":      "フェネルバフチェ",
-  // 中東
   "Al Hilal":        "アル・ヒラル",
   "Al Nassr":        "アル・ナスル",
   "Al Ittihad":      "アル・イテハド",
@@ -438,7 +435,6 @@ const TEAM_JA = {
   "Al Wahda":        "アル・ワフダ",
   "Al Sadd":         "アル・サッド",
   "Al Duhail":       "アル・ドゥハイル",
-  // 北米
   "LA Galaxy":       "LAギャラクシー",
   "LAFC":            "LAFC",
   "Inter Miami":     "インテル・マイアミ",
@@ -452,7 +448,6 @@ const TEAM_JA = {
   "Toronto FC":      "トロントFC",
   "CF Montreal":     "モントリオール",
   "Vancouver Whitecaps":"バンクーバー",
-  // 代表
   "Netherlands":     "オランダ",
   "Japan":           "日本",
   "Tunisia":         "チュニジア",
@@ -508,7 +503,7 @@ const TEAM_JA = {
   "Curaçao":         "キュラソー",
 };
 
-    // ── プレミアリーグ ──
+const TEAM_CREST = {
   "Brighton":        "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg",
   "Liverpool":       "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
   "Arsenal":         "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
@@ -529,7 +524,6 @@ const TEAM_JA = {
   "Leicester":       "https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg",
   "Ipswich":         "https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg",
   "Southampton":     "https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg",
-  // ── ラ・リーガ ──
   "Real Madrid":     "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
   "Barcelona":       "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
   "Atletico Madrid": "https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg",
@@ -545,7 +539,6 @@ const TEAM_JA = {
   "Valencia":        "https://upload.wikimedia.org/wikipedia/en/c/ce/Valenciacf.svg",
   "Getafe":          "https://upload.wikimedia.org/wikipedia/en/4/46/Getafe_logo.svg",
   "Espanyol":        "https://upload.wikimedia.org/wikipedia/en/7/76/RCD_Espanyol_logo.svg",
-  // ── ブンデスリーガ ──
   "Bayern München":  "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg",
   "Dortmund":        "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg",
   "Leipzig":         "https://upload.wikimedia.org/wikipedia/en/0/04/RB_Leipzig_2014_logo.svg",
@@ -559,7 +552,6 @@ const TEAM_JA = {
   "Werder Bremen":   "https://upload.wikimedia.org/wikipedia/commons/b/be/SV-Werder-Bremen-Logo.svg",
   "Augsburg":        "https://upload.wikimedia.org/wikipedia/de/b/b5/FC_Augsburg_Logo.svg",
   "Monchengladbach": "https://upload.wikimedia.org/wikipedia/commons/8/81/Borussia_M%C3%B6nchengladbach_logo.svg",
-  // ── セリエA ──
   "Inter":           "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg",
   "Milan":           "https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg",
   "Juventus":        "https://upload.wikimedia.org/wikipedia/commons/1/15/Juventus_FC_2017_logo.svg",
@@ -568,7 +560,6 @@ const TEAM_JA = {
   "Lazio":           "https://upload.wikimedia.org/wikipedia/en/7/71/SS_Lazio_Badge.svg",
   "Atalanta":        "https://upload.wikimedia.org/wikipedia/de/2/24/Atalanta_BC_logo.svg",
   "Fiorentina":      "https://upload.wikimedia.org/wikipedia/commons/8/8d/ACF_Fiorentina_logo.svg",
-  // ── リーグ・アン ──
   "PSG":             "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg",
   "Marseille":       "https://upload.wikimedia.org/wikipedia/commons/d/d8/Olympique_Marseille_logo.svg",
   "Lyon":            "https://upload.wikimedia.org/wikipedia/en/e/e9/Olympique_Lyonnais.svg",
@@ -576,7 +567,6 @@ const TEAM_JA = {
   "Lille":           "https://upload.wikimedia.org/wikipedia/en/6/62/Logo_Losc_Lille_2011.svg",
   "Nice":            "https://upload.wikimedia.org/wikipedia/en/2/27/OGC_Nice_logo.svg",
   "Rennes":          "https://upload.wikimedia.org/wikipedia/en/7/77/Stade_Rennais_FC.svg",
-  // ── その他欧州 ──
   "Celtic":          "https://upload.wikimedia.org/wikipedia/en/3/35/Celtic_FC_crest.svg",
   "Rangers":         "https://upload.wikimedia.org/wikipedia/en/7/76/Rangers_FC.svg",
   "Feyenoord":       "https://upload.wikimedia.org/wikipedia/commons/8/8f/Feyenoord_logo.svg",
@@ -585,7 +575,6 @@ const TEAM_JA = {
   "Benfica":         "https://upload.wikimedia.org/wikipedia/en/a/a2/SL_Benfica_logo.svg",
   "Sporting CP":     "https://upload.wikimedia.org/wikipedia/en/f/f3/Sporting_CP_%E2%80%93_Sporting_Clube_de_Portugal.svg",
   "Porto":           "https://upload.wikimedia.org/wikipedia/en/3/3b/FC_Porto.svg",
-  // ── 代表 ──
   "Japan":           "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg",
   "Germany":         "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg",
   "France":          "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg",
@@ -593,6 +582,34 @@ const TEAM_JA = {
   "England":         "https://upload.wikimedia.org/wikipedia/en/b/be/Flag_of_England.svg",
   "Brazil":          "https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg",
   "Argentina":       "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg",
+  "Netherlands":     "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg",
+  "Portugal":        "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg",
+  "Belgium":         "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg",
+  "USA":             "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
+  "Mexico":          "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg",
+  "Canada":          "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg",
+  "Australia":       "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg",
+  "South Korea":     "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",
+  "Korea Republic":  "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",
+  "Saudi Arabia":    "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg",
+  "Morocco":         "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg",
+  "Italy":           "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg",
+  "Croatia":         "https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg",
+  "Switzerland":     "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg",
+  "Turkey":          "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg",
+  "Poland":          "https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg",
+  "Ukraine":         "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg",
+  "Scotland":        "https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Scotland.svg",
+  "Austria":         "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg",
+  "Serbia":          "https://upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_Serbia.svg",
+  "Uruguay":         "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg",
+  "Colombia":        "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg",
+  "Ecuador":         "https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg",
+  "Qatar":           "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg",
+  "Iran":            "https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg",
+  "Iraq":            "https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Iraq.svg",
+  "Uzbekistan":      "https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Uzbekistan.svg",
+  "Jordan":          "https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan.svg",
 };
 
 const LEAGUE_JA = {
@@ -605,10 +622,10 @@ const LEAGUE_JA = {
   "Eredivisie":       "エールディビジ",
   "Scottish Prem":    "スコティッシュ",
   "Championship":     "チャンピオンシップ",
-  "Champions League":  "CL",
-  "Europa League":     "EL",
-  "Conference League": "UECL",
-  "World Cup":         "W杯",
+  "Champions League": "CL",
+  "Europa League":    "EL",
+  "Conference League":"UECL",
+  "World Cup":        "W杯",
   "Saudi Pro League": "サウジPL",
   "UAE League":       "UAEリーグ",
   "Qatar Stars":      "カタールSL",
@@ -621,14 +638,7 @@ const LEAGUE_JA = {
   "AFC CL":           "AFCチャンピオンズ",
 };
 
-// ── どのリーグがどのタブに属するか ──
-// tab: 'europe' | 'middle' | 'north'
-// gender: 'male' | 'female'
-// national: true/false
-// youth: true/false
-
 const LEAGUE_CONFIG = {
-  // 欧州クラブ男子
   "EPL":              { tab:"europe", gender:"male" },
   "LaLiga":           { tab:"europe", gender:"male" },
   "Bundesliga":       { tab:"europe", gender:"male" },
@@ -649,40 +659,35 @@ const LEAGUE_CONFIG = {
   "Women Champions League": { tab:"europe", gender:"female" },
   "Frauen Bundesliga":{ tab:"europe", gender:"female" },
   "Division 1 Feminine":{ tab:"europe", gender:"female" },
-  // 中東クラブ（男子のみ）
   "Saudi Pro League": { tab:"middle", gender:"male" },
   "UAE Pro League":   { tab:"middle", gender:"male" },
   "UAE League":       { tab:"middle", gender:"male" },
   "Qatar Stars":      { tab:"middle", gender:"male" },
   "AFC Champions":    { tab:"middle", gender:"male" },
   "AFC CL":           { tab:"middle", gender:"male" },
-  // 北米クラブ
   "MLS":              { tab:"north", gender:"male" },
   "NWSL":             { tab:"north", gender:"female" },
   "Liga MX":          { tab:"north", gender:"male" },
   "Canadian Premier": { tab:"north", gender:"male" },
-  // 代表戦
-  "World Cup":        { tab:"national", gender:"male", national:true },
-  "Nations League":   { tab:"national", gender:"male", national:true },
-  "AFCON":            { tab:"national", gender:"male", national:true },
-  "Copa America":     { tab:"national", gender:"male", national:true },
-  "Euro":             { tab:"national", gender:"male", national:true },
-  "AFC Asian Cup":    { tab:"national", gender:"male", national:true },
-  "Friendly":         { tab:"national", gender:"male", national:true },
+  "World Cup":        { tab:"national", gender:"male",   national:true },
+  "Nations League":   { tab:"national", gender:"male",   national:true },
+  "AFCON":            { tab:"national", gender:"male",   national:true },
+  "Copa America":     { tab:"national", gender:"male",   national:true },
+  "Euro":             { tab:"national", gender:"male",   national:true },
+  "AFC Asian Cup":    { tab:"national", gender:"male",   national:true },
+  "Friendly":         { tab:"national", gender:"male",   national:true },
   "Women World Cup":  { tab:"national", gender:"female", national:true },
   "Women Nations League": { tab:"national", gender:"female", national:true },
   "Women Asian Cup":  { tab:"national", gender:"female", national:true },
-  // ユース代表
-  "U-20 World Cup":   { tab:"youth", gender:"male", national:true },
-  "U-17 World Cup":   { tab:"youth", gender:"male", national:true },
-  "U-23 Asian Cup":   { tab:"youth", gender:"male", national:true },
-  "U-20 Asian Cup":   { tab:"youth", gender:"male", national:true },
-  "U-17 Asian Cup":   { tab:"youth", gender:"male", national:true },
-  "U-20 Women World Cup": { tab:"youth", gender:"female", national:true },
-  "U-17 Women World Cup": { tab:"youth", gender:"female", national:true },
+  "U-20 World Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-17 World Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-23 Asian Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-20 Asian Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-17 Asian Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-20 Women World Cup": { tab:"youth", gender:"female", national:true, youth:true },
+  "U-17 Women World Cup": { tab:"youth", gender:"female", national:true, youth:true },
 };
 
-// タブ別 リーグフィルター選択肢
 const TAB_LEAGUES = {
   europe: [
     { v:"EPL",               l:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 プレミアリーグ" },
@@ -727,12 +732,10 @@ const TAB_LEAGUES = {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 let MATCHES = [];
 let currentTab    = "europe";
-let currentGender = "male";   // 'male' | 'female'
+let currentGender = "male";
 let fLeague       = "all";
 
 const VALID_TABS = ["europe","japanese","national","middle","north","youth"];
-
-// URLハッシュから初期タブを復元
 const hashTab = location.hash.replace('#','');
 if (VALID_TABS.includes(hashTab)) currentTab = hashTab;
 
@@ -764,32 +767,14 @@ const todayJST = toJSTDate(new Date().toISOString());
 const DOW = ["日","月","火","水","木","金","土"];
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// タブ別マッチ分類ロジック
+// タブ別マッチ分類
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-/*
-  matches.jsonの各試合をどのタブに表示するかは以下ルールで判定:
-
-  1. m.tab フィールドがあればそれを優先（将来拡張用）
-  2. なければ m.league を LEAGUE_CONFIG で引く
-  3. それもなければ m.national フラグで代表/欧州クラブを判別（後方互換）
-
-  日本人日程: europe/middle/north のうち m.japanese.length > 0 のもの
-  女子フラグ: m.gender === 'female'  or  LEAGUE_CONFIG[m.league].gender === 'female'
-  ユースフラグ: m.youth === true  or  LEAGUE_CONFIG[m.league].tab === 'youth'
-*/
-
 function getMatchTab(m) {
-  // 明示的フィールドがあれば優先
   if (m.tab) return m.tab;
-  // ユース
   if (m.youth) return "youth";
-  // リーグ設定で引く
   const cfg = LEAGUE_CONFIG[m.league];
   if (cfg) return cfg.tab;
-  // 後方互換: national フラグ
   if (m.national) return "national";
-  // デフォルトは欧州
   return "europe";
 }
 
@@ -803,25 +788,19 @@ function getMatchGender(m) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // UI 制御
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-// 性別トグルを表示するタブ
-const GENDER_TABS   = ["europe","japanese","national","north","youth"];
-// リーグフィルターを表示するタブ
-const FILTER_TABS   = ["europe","middle","north"];
+const GENDER_TABS = ["europe","japanese","national","north","youth"];
+const FILTER_TABS = ["europe","middle","north"];
 
 function updateUI() {
-  // タブボタン active
   document.querySelectorAll(".main-nav button").forEach(b => b.classList.remove("active"));
   const activeBtn = document.getElementById("tab-" + currentTab);
   if (activeBtn) activeBtn.classList.add("active");
 
-  // 性別トグル
   const gBar = document.getElementById("genderBar");
   gBar.style.display = GENDER_TABS.includes(currentTab) ? "" : "none";
   document.getElementById("gBtn-male").classList.toggle("active",   currentGender === "male");
   document.getElementById("gBtn-female").classList.toggle("active", currentGender === "female");
 
-  // リーグフィルター
   const fBar = document.getElementById("filterBar");
   if (FILTER_TABS.includes(currentTab)) {
     fBar.style.display = "";
@@ -835,9 +814,7 @@ function rebuildLeagueSelect() {
   const sel = document.getElementById("leagueSel");
   const options = TAB_LEAGUES[currentTab] || [];
   let html = `<option value="all">全リーグ</option>`;
-  options.forEach(o => {
-    html += `<option value="${o.v}">${o.l}</option>`;
-  });
+  options.forEach(o => { html += `<option value="${o.v}">${o.l}</option>`; });
   sel.innerHTML = html;
   sel.value = fLeague;
 }
@@ -893,12 +870,9 @@ function render() {
     const mTab    = getMatchTab(m);
     const mGender = getMatchGender(m);
 
-    // ── タブ別フィルタ ──
     if (currentTab === "japanese") {
-      // 欧州・中東・北米から日本人所属チームの試合
       if (!["europe","middle","north"].includes(mTab)) return false;
       if (!m.japanese || m.japanese.length === 0) return false;
-      // 日本人日程では性別切替あり
       if (mGender !== currentGender) return false;
     } else if (currentTab === "national") {
       if (mTab !== "national") return false;
@@ -911,15 +885,12 @@ function render() {
       if (mGender !== currentGender) return false;
     } else if (currentTab === "middle") {
       if (mTab !== "middle") return false;
-      // 中東は男子のみ（性別トグル非表示）
     } else if (currentTab === "north") {
       if (mTab !== "north") return false;
       if (mGender !== currentGender) return false;
     }
 
-    // ── リーグフィルタ ──
     if (fLeague !== "all" && m.league !== fLeague) return false;
-
     return true;
   });
 
@@ -929,7 +900,6 @@ function render() {
     return;
   }
 
-  // 日付グループ
   const grouped = {};
   data.forEach(m => {
     const dateKey = toJSTDate(m.kickoffUTC);
@@ -951,28 +921,25 @@ function render() {
     </div>`;
 
     list.forEach((m, i) => {
-      const leagueJa  = LEAGUE_JA[m.league] || m.league;
-      const homeJa    = teamJa(m.home);
-      const awayJa    = teamJa(m.away);
-      const jstTime   = toJST(m.kickoffUTC);
-      const lClass    = m.lClass || "l-champ";
-      const mGender   = getMatchGender(m);
+      const leagueJa = LEAGUE_JA[m.league] || m.league;
+      const homeJa   = teamJa(m.home);
+      const awayJa   = teamJa(m.away);
+      const jstTime  = toJST(m.kickoffUTC);
+      const lClass   = m.lClass || "l-champ";
+      const mGender  = getMatchGender(m);
 
-      // クレスト
       const hCrestUrl = m.homeCrest || TEAM_CREST[m.home] || null;
-const aCrestUrl = m.awayCrest || TEAM_CREST[m.away] || null;
-const hCrest = hCrestUrl
-  ? `<img class="crest" src="${hCrestUrl}" alt="" onerror="this.style.display='none'">`
-  : "";
-const aCrest = aCrestUrl
-  ? `<img class="crest" src="${aCrestUrl}" alt="" onerror="this.style.display='none'">`
-  : "";
+      const aCrestUrl = m.awayCrest || TEAM_CREST[m.away] || null;
+      const hCrest = hCrestUrl
+        ? `<img class="crest" src="${hCrestUrl}" alt="" onerror="this.style.display='none'">`
+        : "";
+      const aCrest = aCrestUrl
+        ? `<img class="crest" src="${aCrestUrl}" alt="" onerror="this.style.display='none'">`
+        : "";
 
-      // 女子バッジ
       const womenBadge = mGender === "female"
         ? `<span class="l-badge l-womens">♀</span>` : "";
 
-      // 日本人選手タグ
       const playersJa = (m.japanese && m.japanese.length > 0)
         ? m.japanese.map(n => playerJa(n)) : [];
       const pHtml = playersJa.length > 0
