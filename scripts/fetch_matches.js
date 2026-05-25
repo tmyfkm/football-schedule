@@ -80,7 +80,7 @@ const FD_NATIONAL = [
 ];
 
 // football-data.org エンブレム補完用リーグ
-const FD_CREST_COMPETITIONS = {};
+const FD_CREST_COMPETITIONS = [];
 
 // ────────────────────────────────────────────────
 // ユーティリティ
