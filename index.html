@@ -174,7 +174,7 @@ main { max-width:1100px; margin:0 auto; padding:16px 20px 60px; background:var(-
   display:inline-block; padding:2px 7px; border-radius:3px;
   font-size:.63rem; font-weight:700; letter-spacing:.03em; white-space:nowrap; flex-shrink:0;
 }
-.l-epl     { background:rgba(61,25,91,.18);   color:#9B6CC0; border:1px solid rgba(61,25,91,.35); }
+.l-epl    { background:rgba(61,25,91,.18);   color:#9B6CC0; border:1px solid rgba(61,25,91,.35); }
 .l-laliga { background:rgba(255,75,0,.15);   color:#FF7040; border:1px solid rgba(255,75,0,.35); }
 .l-bund   { background:rgba(211,1,12,.15);   color:#E05050; border:1px solid rgba(211,1,12,.35); }
 .l-serie  { background:rgba(29,67,156,.18);  color:#6090E0; border:1px solid rgba(29,67,156,.35); }
@@ -182,7 +182,7 @@ main { max-width:1100px; margin:0 auto; padding:16px 20px 60px; background:var(-
 .l-ligap  { background:rgba(0,90,160,.18);   color:#60A0D8; border:1px solid rgba(0,90,160,.35); }
 .l-erediv { background:rgba(255,100,0,.15);  color:#FF8844; border:1px solid rgba(255,100,0,.3); }
 .l-spl    { background:rgba(0,50,140,.18);   color:#5080C8; border:1px solid rgba(0,50,140,.35); }
-.l-champ  { background:rgba(0,29,94,.2);      color:#6090D0; border:1px solid rgba(0,29,94,.4); }
+.l-champ  { background:rgba(0,29,94,.2);     color:#6090D0; border:1px solid rgba(0,29,94,.4); }
 .l-uel    { background:rgba(248,123,27,.15); color:#F09050; border:1px solid rgba(248,123,27,.35); }
 .l-champ2 { background:rgba(80,60,160,.18);  color:#9080D0; border:1px solid rgba(80,60,160,.35); }
 .l-belgique { background:rgba(0,0,0,.2); color:#f5d020; border:1px solid rgba(245,208,32,.3); }
@@ -231,7 +231,7 @@ footer { text-align:center; padding:16px; border-top:1px solid var(--border); ba
   </div>
   <div class="nav-rows">
     <nav class="main-nav nav-row1">
-      <button id="tab-europe"   onclick="setTab('europe',this)" class="active">🌍 欧州日程</button>
+      <button id="tab-europe"   onclick="setTab('europe',this)"  >🌍 欧州日程</button>
       <button id="tab-japanese" onclick="setTab('japanese',this)">🇯🇵 日本人日程</button>
       <button id="tab-national" onclick="setTab('national',this)">🏆 代表戦日程</button>
     </nav>
@@ -316,11 +316,11 @@ const PLAYER_JA = {
   "Sota Kawasaki":     "川崎颯太",
   "Kaishu Sano":       "佐野海舟",
   "Yuya Osako":        "大迫勇也",
-  "Kou Itakura":       "板倉滉"
+  "Kou Itakura":       "板倉滉",
 };
 
 const TEAM_JA = {
-  "Paris Saint-Germain FC":     "パリSG",
+    "Paris Saint-Germain FC":     "パリSG",
   "Arsenal FC":                 "アーセナル",
   "Chelsea FC":                 "チェルシー",
   "Liverpool FC":               "リバプール",
@@ -343,6 +343,7 @@ const TEAM_JA = {
   "Southampton FC":             "サウサンプトン",
   "Leeds United FC":            "リーズ",
   "Sunderland AFC":             "サンダーランド",
+
   "Real Madrid CF":             "レアル・マドリード",
   "FC Barcelona":               "バルセロナ",
   "Club Atlético de Madrid":    "アトレティコ",
@@ -361,6 +362,7 @@ const TEAM_JA = {
   "Rayo Vallecano de Madrid":   "ラージョ",
   "UD Las Palmas":              "ラス・パルマス",
   "Deportivo Alavés":           "アラベス",
+
   "FC Bayern München":          "バイエルン",
   "Borussia Dortmund":          "ドルトムント",
   "RB Leipzig":                 "ライプツィヒ",
@@ -376,6 +378,7 @@ const TEAM_JA = {
   "VfL Bochum 1848":            "ボーフム",
   "Borussia Mönchengladbach":   "M・グラードバッハ",
   "1. FC Union Berlin":         "ウニオン・ベルリン",
+
   "FC Internazionale Milano":   "インテル",
   "AC Milan":                   "ACミラン",
   "Juventus FC":                "ユベントス",
@@ -396,6 +399,7 @@ const TEAM_JA = {
   "US Lecce":                   "レッチェ",
   "Venezia FC":                 "ベネチア",
   "Como 1907":                  "コモ",
+
   "Paris Saint-Germain":        "パリSG",
   "Olympique de Marseille":     "マルセイユ",
   "Olympique Lyonnais":         "リヨン",
@@ -413,6 +417,7 @@ const TEAM_JA = {
   "FC Nantes":                  "ナント",
   "Paris FC":                   "パリFC",
   "Paris FC (W)":               "パリFC（女子）",
+
   "Celtic FC":                  "セルティック",
   "Rangers FC":                 "レンジャーズ",
   "Feyenoord":                  "フェイエノールト",
@@ -425,187 +430,187 @@ const TEAM_JA = {
   "Galatasaray SK":             "ガラタサライ",
   "Beşiktaş JK":                "ベシクタシュ",
   "Fenerbahçe SK":              "フェネルバフチェ",
-  "Brighton":                   "ブライトン",
-  "Liverpool":                  "リバプール",
-  "Arsenal":                    "アーセナル",
-  "Chelsea":                    "チェルシー",
-  "Man City":                   "マンC",
-  "Man United":                 "マンU",
-  "Tottenham":                  "トッテナム",
-  "Newcastle":                  "ニューカッスル",
-  "Aston Villa":                "アストン・ビラ",
-  "West Ham":                   "ウェストハム",
-  "Brentford":                  "ブレントフォード",
-  "Fulham":                     "フラム",
-  "Wolves":                     "ウォルバーハンプトン",
-  "Nottm Forest":               "ノッティンガムF",
-  "Bournemouth":                "ボーンマス",
-  "Crystal Palace":             "クリスタルパレス",
-  "Everton":                    "エバートン",
-  "Leicester":                  "レスター",
-  "Ipswich":                    "イプスウィッチ",
-  "Southampton":                "サウサンプトン",
-  "Leeds":                      "リーズ",
-  "Sunderland":                 "サンダーランド",
-  "Burnley":                    "バーンリー",
-  "Real Madrid":                "レアル・マドリード",
-  "Barcelona":                  "バルセロナ",
-  "Atletico Madrid":            "アトレティコ",
-  "Real Sociedad":              "ソシエダ",
-  "Villarreal":                 "ビジャレアル",
-  "Sevilla":                    "セビージャ",
-  "Valencia":                   "バレンシア",
-  "Getafe":                     "ヘタフェ",
-  "Athletic Club":              "アスレティック",
-  "Betis":                      "ベティス",
-  "Osasuna":                    "オサスナ",
-  "Girona":                     "ジローナ",
-  "Mallorca":                   "マジョルカ",
-  "Celta Vigo":                 "セルタ",
-  "Alaves":                     "アラベス",
-  "Las Palmas":                 "ラス・パルマス",
-  "Espanyol":                   "エスパニョール",
-  "Leganes":                    "レガネス",
-  "Valladolid":                 "バジャドリード",
-  "Rayo Vallecano":             "ラージョ",
-  "Bayern München":             "バイエルン",
-  "Dortmund":                   "ドルトムント",
-  "Leipzig":                    "ライプツィヒ",
-  "Leverkusen":                 "レバークーゼン",
-  "Stuttgart":                  "シュトゥットガルト",
-  "Frankfurt":                  "フランクフルト",
-  "Freiburg":                   "フライブルク",
-  "Wolfsburg":                  "ヴォルフスブルク",
-  "Hoffenheim":                 "ホッフェンハイム",
-  "Mainz":                      "マインツ",
-  "Augsburg":                   "アウクスブルク",
-  "Werder Bremen":              "ブレーメン",
-  "Bochum":                     "ボーフム",
-  "Monchengladbach":            "M・グラードバッハ",
-  "Union Berlin":               "ウニオン・ベルリン",
-  "Inter":                      "インテル",
-  "Milan":                      "ACミラン",
-  "Juventus":                   "ユベントス",
-  "Napoli":                     "ナポリ",
-  "Roma":                       "ローマ",
-  "Lazio":                      "ラツィオ",
-  "Atalanta":                   "アタランタ",
-  "Fiorentina":                 "フィオレンティーナ",
-  "Udinese":                    "ウディネーゼ",
-  "Torino":                     "トリノ",
-  "Cagliari":                   "カリアリ",
-  "Parma":                      "パルマ",
-  "Monza":                      "モンツァ",
-  "Bologna":                    "ボローニャ",
-  "Empoli":                     "エンポリ",
-  "Genoa":                      "ジェノア",
-  "Verona":                     "ヴェローナ",
-  "Lecce":                      "レッチェ",
-  "Venezia":                    "ベネチア",
-  "Como":                       "コモ",
-  "PSG":                        "パリSG",
-  "Marseille":                  "マルセイユ",
-  "Lyon":                       "リヨン",
-  "Monaco":                     "モナコ",
-  "Lille":                      "リール",
-  "Nice":                       "ニース",
-  "Strasbourg":                 "ストラスブール",
-  "Rennes":                     "レンヌ",
-  "Nantes":                     "ナント",
-  "Toulouse":                   "トゥールーズ",
-  "Montpellier":                "モンペリエ",
-  "Brest":                      "ブレスト",
-  "Le Havre":                   "ル・アーブル",
-  "Saint-Etienne":              "サンテティエンヌ",
-  "Celtic":                     "セルティック",
-  "Rangers":                    "レンジャーズ",
-  "Feyenoord":                  "フェイエノールト",
-  "Ajax":                       "アヤックス",
-  "PSV Eindhoven":              "PSV",
-  "Benfica":                    "ベンフィカ",
-  "Sporting CP":                "スポルティング",
-  "Porto":                      "ポルト",
-  "Braga":                      "ブラガ",
-  "Galatasaray":                "ガラタサライ",
-  "Besiktas":                   "ベシクタシュ",
-  "Fenerbahce":                 "フェネルバフチェ",
-  "Al Hilal":                   "アル・ヒラル",
-  "Al Nassr":                   "アル・ナスル",
-  "Al Ittihad":                 "アル・イテハド",
-  "Al Ahli":                    "アル・アハリ",
-  "Al Qadsiah":                 "アル・カドシア",
-  "Al Shabab":                  "アル・シャバブ",
-  "Al Ain":                     "アル・アイン",
-  "Al Jazira":                  "アル・ジャジーラ",
-  "Al Wahda":                   "アル・ワフダ",
-  "Al Sadd":                    "アル・サッド",
-  "Al Duhail":                  "アル・ドゥハイル",
-  "LA Galaxy":                  "LAギャラクシー",
-  "LAFC":                       "LAFC",
-  "Inter Miami":                "インテル・マイアミ",
-  "New York City":              "NYシティ",
-  "New York RB":                "NYレッドブルズ",
-  "Atlanta United":             "アトランタ",
-  "Seattle Sounders":           "シアトル",
-  "Portland Timbers":           "ポートランド",
-  "FC Dallas":                  "FCダラス",
-  "Columbus Crew":              "コロンバス",
-  "Toronto FC":                 "トロントFC",
-  "CF Montreal":                "モントロール",
-  "Vancouver Whitecaps":        "バンクーバー",
-  "Netherlands":                "オランダ",
-  "Japan":                      "日本",
-  "Tunisia":                    "チュニジア",
-  "Germany":                    "ドイツ",
-  "France":                     "フランス",
-  "Spain":                      "スペイン",
-  "Brazil":                     "ブラジル",
-  "Argentina":                  "アルゼンチン",
-  "England":                    "イングランド",
-  "Portugal":                   "ポルトガル",
-  "Belgium":                    "ベルギー",
-  "USA":                        "アメリカ",
-  "Mexico":                     "メキシコ",
-  "Canada":                     "カナダ",
-  "Australia":                  "オーストラリア",
-  "South Korea":                "韓国",
-  "Korea Republic":             "韓国",
-  "Saudi Arabia":               "サウジアラビア",
-  "Iran":                       "イラン",
-  "Morocco":                    "モロッコ",
-  "Senegal":                    "セネガル",
-  "Ivory Coast":                "コートジボワール",
-  "Ghana":                      "ガーナ",
-  "South Africa":               "南アフリカ",
-  "Egypt":                      "エジプト",
-  "Algeria":                    "アルジェリア",
-  "Uruguay":                    "ウルグアイ",
-  "Colombia":                   "コロンビア",
-  "Ecuador":                    "エクアドル",
-  "Paraguay":                   "パラグアイ",
-  "Qatar":                      "カタール",
-  "Switzerland":                "スイス",
-  "Croatia":                    "クロアチア",
-  "Scotland":                   "スコットランド",
-  "Sweden":                     "スウェーデン",
-  "Norway":                     "ノルウェー",
-  "Austria":                    "オーストリア",
-  "Turkey":                     "トルコ",
-  "Serbia":                     "セルビア",
-  "Ukraine":                    "ウクライナ",
-  "Poland":                     "ポーランド",
-  "Czechia":                    "チェコ",
-  "New Zealand":                "ニュージーランド",
-  "Iraq":                       "イラク",
-  "Jordan":                     "ヨルダン",
-  "Uzbekistan":                 "ウズベキスタン",
-  "Haiti":                      "ハイチ",
-  "Panama":                     "パナマ",
-  "Cape Verde":                 "カーボベルデ",
-  "Congo DR":                   "コンゴ民主共和国",
-  "Bosnia-H.":                  "ボスニア・ヘルツェゴビナ",
-  "Curacao":                    "キュラソー",
-  "Curaçao":                    "キュラソー"
+  "Brighton":        "ブライトン",
+  "Liverpool":       "リバプール",
+  "Arsenal":         "アーセナル",
+  "Chelsea":         "チェルシー",
+  "Man City":        "マンC",
+  "Man United":      "マンU",
+  "Tottenham":       "トッテナム",
+  "Newcastle":       "ニューカッスル",
+  "Aston Villa":     "アストン・ビラ",
+  "West Ham":        "ウェストハム",
+  "Brentford":       "ブレントフォード",
+  "Fulham":          "フラム",
+  "Wolves":          "ウォルバーハンプトン",
+  "Nottm Forest":    "ノッティンガムF",
+  "Bournemouth":     "ボーンマス",
+  "Crystal Palace":  "クリスタルパレス",
+  "Everton":         "エバートン",
+  "Leicester":       "レスター",
+  "Ipswich":         "イプスウィッチ",
+  "Southampton":     "サウサンプトン",
+  "Leeds":           "リーズ",
+  "Sunderland":      "サンダーランド",
+  "Burnley":         "バーンリー",
+  "Real Madrid":     "レアル・マドリード",
+  "Barcelona":       "バルセロナ",
+  "Atletico Madrid": "アトレティコ",
+  "Real Sociedad":   "ソシエダ",
+  "Villarreal":      "ビジャレアル",
+  "Sevilla":         "セビージャ",
+  "Valencia":        "バレンシア",
+  "Getafe":          "ヘタフェ",
+  "Athletic Club":   "アスレティック",
+  "Betis":           "ベティス",
+  "Osasuna":         "オサスナ",
+  "Girona":          "ジローナ",
+  "Mallorca":        "マジョルカ",
+  "Celta Vigo":      "セルタ",
+  "Alaves":          "アラベス",
+  "Las Palmas":      "ラス・パルマス",
+  "Espanyol":        "エスパニョール",
+  "Leganes":         "レガネス",
+  "Valladolid":      "バジャドリード",
+  "Rayo Vallecano":  "ラージョ",
+  "Bayern München":  "バイエルン",
+  "Dortmund":        "ドルトムント",
+  "Leipzig":         "ライプツィヒ",
+  "Leverkusen":      "レバークーゼン",
+  "Stuttgart":       "シュトゥットガルト",
+  "Frankfurt":       "フランクフルト",
+  "Freiburg":        "フライブルク",
+  "Wolfsburg":       "ヴォルフスブルク",
+  "Hoffenheim":      "ホッフェンハイム",
+  "Mainz":           "マインツ",
+  "Augsburg":        "アウクスブルク",
+  "Werder Bremen":   "ブレーメン",
+  "Bochum":          "ボーフム",
+  "Monchengladbach": "M・グラードバッハ",
+  "Union Berlin":    "ウニオン・ベルリン",
+  "Inter":           "インテル",
+  "Milan":           "ACミラン",
+  "Juventus":        "ユベントス",
+  "Napoli":          "ナポリ",
+  "Roma":            "ローマ",
+  "Lazio":           "ラツィオ",
+  "Atalanta":        "アタランタ",
+  "Fiorentina":      "フィオレンティーナ",
+  "Udinese":         "ウディネーゼ",
+  "Torino":          "トリノ",
+  "Cagliari":        "カリアリ",
+  "Parma":           "パルマ",
+  "Monza":           "モンツァ",
+  "Bologna":         "ボローニャ",
+  "Empoli":          "エンポリ",
+  "Genoa":           "ジェノア",
+  "Verona":          "ヴェローナ",
+  "Lecce":           "レッチェ",
+  "Venezia":         "ベネチア",
+  "Como":            "コモ",
+  "PSG":             "パリSG",
+  "Marseille":       "マルセイユ",
+  "Lyon":            "リヨン",
+  "Monaco":          "モナコ",
+  "Lille":           "リール",
+  "Nice":            "ニース",
+  "Strasbourg":      "ストラスブール",
+  "Rennes":          "レンヌ",
+  "Nantes":          "ナント",
+  "Toulouse":        "トゥールーズ",
+  "Montpellier":     "モンペリエ",
+  "Brest":           "ブレスト",
+  "Le Havre":        "ル・アーブル",
+  "Saint-Etienne":   "サンテティエンヌ",
+  "Celtic":          "セルティック",
+  "Rangers":         "レンジャーズ",
+  "Feyenoord":       "フェイエノールト",
+  "Ajax":            "アヤックス",
+  "PSV Eindhoven":   "PSV",
+  "Benfica":         "ベンフィカ",
+  "Sporting CP":     "スポルティング",
+  "Porto":           "ポルト",
+  "Braga":           "ブラガ",
+  "Galatasaray":     "ガラタサライ",
+  "Besiktas":        "ベシクタシュ",
+  "Fenerbahce":      "フェネルバフチェ",
+  "Al Hilal":        "アル・ヒラル",
+  "Al Nassr":        "アル・ナスル",
+  "Al Ittihad":      "アル・イテハド",
+  "Al Ahli":         "アル・アハリ",
+  "Al Qadsiah":      "アル・カドシア",
+  "Al Shabab":       "アル・シャバブ",
+  "Al Ain":          "アル・アイン",
+  "Al Jazira":       "アル・ジャジーラ",
+  "Al Wahda":        "アル・ワフダ",
+  "Al Sadd":         "アル・サッド",
+  "Al Duhail":       "アル・ドゥハイル",
+  "LA Galaxy":       "LAギャラクシー",
+  "LAFC":            "LAFC",
+  "Inter Miami":     "インテル・マイアミ",
+  "New York City":   "NYシティ",
+  "New York RB":     "NYレッドブルズ",
+  "Atlanta United":  "アトランタ",
+  "Seattle Sounders":"シアトル",
+  "Portland Timbers":"ポートランド",
+  "FC Dallas":       "FCダラス",
+  "Columbus Crew":   "コロンバス",
+  "Toronto FC":      "トロントFC",
+  "CF Montreal":     "モントリオール",
+  "Vancouver Whitecaps":"バンクーバー",
+  "Netherlands":     "オランダ",
+  "Japan":           "日本",
+  "Tunisia":         "チュニジア",
+  "Germany":         "ドイツ",
+  "France":          "フランス",
+  "Spain":           "スペイン",
+  "Brazil":          "ブラジル",
+  "Argentina":       "アルゼンチン",
+  "England":         "イングランド",
+  "Portugal":        "ポルトガル",
+  "Belgium":         "ベルギー",
+  "USA":             "アメリカ",
+  "Mexico":          "メキシコ",
+  "Canada":          "カナダ",
+  "Australia":       "オーストラリア",
+  "South Korea":     "韓国",
+  "Korea Republic":  "韓国",
+  "Saudi Arabia":    "サウジアラビア",
+  "Iran":            "イラン",
+  "Morocco":         "モロッコ",
+  "Senegal":         "セネガル",
+  "Ivory Coast":     "コートジボワール",
+  "Ghana":           "ガーナ",
+  "South Africa":    "南アフリカ",
+  "Egypt":           "エジプト",
+  "Algeria":         "アルジェリア",
+  "Uruguay":         "ウルグアイ",
+  "Colombia":        "コロンビア",
+  "Ecuador":         "エクアドル",
+  "Paraguay":        "パラグアイ",
+  "Qatar":           "カタール",
+  "Switzerland":     "スイス",
+  "Croatia":         "クロアチア",
+  "Scotland":        "スコットランド",
+  "Sweden":          "スウェーデン",
+  "Norway":          "ノルウェー",
+  "Austria":         "オーストリア",
+  "Turkey":          "トルコ",
+  "Serbia":          "セルビア",
+  "Ukraine":         "ウクライナ",
+  "Poland":          "ポーランド",
+  "Czechia":         "チェコ",
+  "New Zealand":     "ニュージーランド",
+  "Iraq":            "イラク",
+  "Jordan":          "ヨルダン",
+  "Uzbekistan":      "ウズベキスタン",
+  "Haiti":           "ハイチ",
+  "Panama":          "パナマ",
+  "Cape Verde":      "カーボベルデ",
+  "Congo DR":        "コンゴ民主共和国",
+  "Bosnia-H.":       "ボスニア・ヘルツェゴビナ",
+  "Curacao":         "キュラソー",
+  "Curaçao":         "キュラソー",
 };
 
 const TEAM_CREST = {
@@ -706,230 +711,404 @@ const TEAM_CREST = {
   "Poland":          "https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg",
   "Ukraine":         "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg",
   "Scotland":        "https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Scotland.svg",
-  "Austria":         "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_Austria.svg"
+  "Austria":         "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg",
+  "Serbia":          "https://upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_Serbia.svg",
+  "Uruguay":         "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg",
+  "Colombia":        "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg",
+  "Ecuador":         "https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg",
+  "Qatar":           "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg",
+  "Iran":            "https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg",
+  "Iraq":            "https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Iraq.svg",
+  "Uzbekistan":      "https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Uzbekistan.svg",
+  "Jordan":          "https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan.svg",
+};
+
+const LEAGUE_JA = {
+  "EPL":              "プレミア",
+  "LaLiga":           "ラ・リーガ",
+  "Bundesliga":       "ブンデス",
+  "Serie A":          "セリエA",
+  "Ligue 1":          "リーグ・アン",
+  "Liga Portugal":    "プリメイラ",
+  "Eredivisie":       "エールディビジ",
+  "Scottish Prem":    "スコティッシュ",
+  "Championship":     "チャンピオンシップ",
+  "Champions League": "CL",
+  "Europa League":    "EL",
+  "Conference League":"UECL",
+  "World Cup":        "W杯",
+  "Saudi Pro League": "サウジPL",
+  "UAE League":       "UAEリーグ",
+  "Qatar Stars":      "カタールSL",
+  "MLS":              "MLS",
+  "NWSL":             "NWSL",
+  "Women Champions League": "女子CL",
+  "Women World Cup":  "女子W杯",
+  "Nations League":   "ネーションズL",
+  "AFCON":            "AFCON",
+  "AFC CL":           "AFCチャンピオンズ",
+  "Première Ligue Féminine": "プルミエール",
+　"Division 1 Féminine":     "女子D1",
+　"Division 1 Feminine":     "女子D1",
+};
+
+const LEAGUE_CONFIG = {
+  "EPL":              { tab:"europe", gender:"male" },
+  "LaLiga":           { tab:"europe", gender:"male" },
+  "Bundesliga":       { tab:"europe", gender:"male" },
+  "Serie A":          { tab:"europe", gender:"male" },
+  "Ligue 1":          { tab:"europe", gender:"male" },
+  "Liga Portugal":    { tab:"europe", gender:"male" },
+  "Eredivisie":       { tab:"europe", gender:"male" },
+  "Scottish Prem":    { tab:"europe", gender:"male" },
+  "Championship":     { tab:"europe", gender:"male" },
+  "Belgian Pro League":{ tab:"europe", gender:"male" },
+  "Primeira Liga":    { tab:"europe", gender:"male" },
+  "Champions League": { tab:"europe", gender:"male" },
+  "Europa League":    { tab:"europe", gender:"male" },
+  "Conference League":{ tab:"europe", gender:"male" },
+  "Super Lig":        { tab:"europe", gender:"male" },
+  "Eredivisie Women": { tab:"europe", gender:"female" },
+  "WSL":              { tab:"europe", gender:"female" },
+  "Women Champions League": { tab:"europe", gender:"female" },
+  "Frauen Bundesliga":{ tab:"europe", gender:"female" },
+  "Division 1 Feminine":{ tab:"europe", gender:"female" },
+  "Saudi Pro League": { tab:"middle", gender:"male" },
+  "UAE Pro League":   { tab:"middle", gender:"male" },
+  "UAE League":       { tab:"middle", gender:"male" },
+  "Qatar Stars":      { tab:"middle", gender:"male" },
+  "AFC Champions":    { tab:"middle", gender:"male" },
+  "AFC CL":           { tab:"middle", gender:"male" },
+  "MLS":              { tab:"north", gender:"male" },
+  "NWSL":             { tab:"north", gender:"female" },
+  "Liga MX":          { tab:"north", gender:"male" },
+  "Canadian Premier": { tab:"north", gender:"male" },
+  "World Cup":        { tab:"national", gender:"male",   national:true },
+  "Nations League":   { tab:"national", gender:"male",   national:true },
+  "AFCON":            { tab:"national", gender:"male",   national:true },
+  "Copa America":     { tab:"national", gender:"male",   national:true },
+  "Euro":             { tab:"national", gender:"male",   national:true },
+  "AFC Asian Cup":    { tab:"national", gender:"male",   national:true },
+  "Friendly":         { tab:"national", gender:"male",   national:true },
+  "Women World Cup":  { tab:"national", gender:"female", national:true },
+  "Women Nations League": { tab:"national", gender:"female", national:true },
+  "Women Asian Cup":  { tab:"national", gender:"female", national:true },
+  "U-20 World Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-17 World Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-23 Asian Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-20 Asian Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-17 Asian Cup":   { tab:"youth", gender:"male",   national:true, youth:true },
+  "U-20 Women World Cup": { tab:"youth", gender:"female", national:true, youth:true },
+  "U-17 Women World Cup": { tab:"youth", gender:"female", national:true, youth:true },
+};
+
+const TAB_LEAGUES = {
+  europe: [
+    { v:"EPL",               l:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 プレミアリーグ",         gender:"male" },
+    { v:"LaLiga",            l:"🇪🇸 ラ・リーガ",                 gender:"male" },
+    { v:"Bundesliga",        l:"🇩🇪 ブンデスリーガ",              gender:"male" },
+    { v:"Serie A",           l:"🇮🇹 セリエA",                   gender:"male" },
+    { v:"Ligue 1",           l:"🇫🇷 リーグ・アン",               gender:"male" },
+    { v:"Eredivisie",        l:"🇳🇱 エールディヴィジ",            gender:"male" },
+    { v:"Belgian Pro League",l:"🇧🇪 ベルギーリーグ",             gender:"male" },
+    { v:"Scottish Prem",     l:"🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコティッシュ",           gender:"male" },
+    { v:"Liga Portugal",     l:"🇵🇹 プリメイラリーガ",            gender:"male" },
+    { v:"Championship",      l:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 チャンピオンシップ",        gender:"male" },
+    { v:"Champions League",  l:"UEFAチャンピオンズリーグ",         gender:"male" },
+    { v:"Europa League",     l:"UEFAヨーロッパリーグ",            gender:"male" },
+    { v:"Conference League", l:"UEFAカンファレンスリーグ",         gender:"male" },
+    { v:"WSL",               l:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 WSL（女子）",             gender:"female" },
+    { v:"Women Champions League", l:"🏆 女子CL",                gender:"female" },
+    { v:"Frauen Bundesliga", l:"🇩🇪 女子ブンデス",               gender:"female" },
+    { v:"Division 1 Feminine", l:"🇫🇷 女子D1",                  gender:"female" },
+  ],
+  middle: [
+    { v:"Saudi Pro League",  l:"🇸🇦 サウジPL",     gender:"male" },
+    { v:"UAE Pro League",    l:"🇦🇪 UAEリーグ",    gender:"male" },
+    { v:"UAE League",        l:"🇦🇪 UAEリーグ",    gender:"male" },
+    { v:"Qatar Stars",       l:"🇶🇦 カタールSL",   gender:"male" },
+    { v:"AFC CL",            l:"🏆 AFCチャンピオンズ", gender:"male" },
+  ],
+  north: [
+    { v:"MLS",               l:"🇺🇸 MLS（男子）",  gender:"male" },
+    { v:"NWSL",              l:"🇺🇸 NWSL（女子）", gender:"female" },
+    { v:"Liga MX",           l:"🇲🇽 リーガMX",     gender:"male" },
+    { v:"Canadian Premier",  l:"🇨🇦 カナダPL",     gender:"male" },
+  ],
+  japanese: [],
+  national: [],
+  youth: [],
 };
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// リーグマスタ定義（性別紐付け）
+// 状態
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-const LEAGUES = [
-  { val: "epl", name: "プレミアリーグ", gender: "male" },
-  { val: "laliga", name: "ラ・リーガ", gender: "male" },
-  { val: "bund", name: "ブンデスリーガ", gender: "male" },
-  { val: "serie", name: "セリエA", gender: "male" },
-  { val: "ligue", name: "リーグ・アン", gender: "male" },
-  { val: "erediv", name: "エールディヴィジ", gender: "male" },
-  { val: "belgique", name: "ベルギーリーグ", gender: "male" },
-  { val: "middle", name: "中東リーグ", gender: "male" },
-  { val: "north", name: "北米MLS", gender: "male" },
-  { val: "womens", name: "女子WEリーグ", gender: "female" },
-  { val: "womens_overseas", name: "海外女子リーグ", gender: "female" },
-  { val: "wc", name: "W杯/国際大会", gender: "all" },
-  { val: "youth", name: "ユース代表戦", gender: "all" }
-];
+let MATCHES = [];
+let currentTab    = "europe";
+let currentGender = "male";
+let fLeague       = "all";
 
-// 状態管理用
-let currentTab = 'europe';
-let currentGender = 'male';
+const VALID_TABS = ["europe","japanese","national","middle","north","youth"];
+const hashTab = location.hash.replace('#','');
+if (VALID_TABS.includes(hashTab)) currentTab = hashTab;
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// コントロールロジック
+// ユーティリティ
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-// ページ初期化
-document.addEventListener('DOMContentLoaded', () => {
-  // 更新日時のセット
-  const now = new Date();
-  document.getElementById('updatedAt').textContent = `${now.getFullYear()}/${String(now.getMonth()+1).padStart(2,'0')}/${String(now.getDate()).padStart(2,'0')} 07:00`;
-  
-  // 初期タブと初期性別に応じたプルダウンの構築
-  setTab('europe', document.getElementById('tab-europe'));
-});
-
-// タブ切り替え処理
-function setTab(tabId, btn) {
-  currentTab = tabId;
-  
-  // タブボタンのアクティブ制御
-  document.querySelectorAll('.main-nav button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  
-  const genderBar = document.getElementById('genderBar');
-  const filterBar = document.getElementById('filterBar');
-  
-  // タブの内容に応じて、性別バーやリーグフィルターの表示・非表示を切り替える
-  if (tabId === 'japanese' || tabId === 'national' || tabId === 'youth') {
-    genderBar.style.display = 'block';
-    filterBar.style.display = 'block';
-  } else if (tabId === 'europe' || tabId === 'middle' || tabId === 'north') {
-    genderBar.style.display = 'none'; // 特定のエリアタブの時は性別を選ばせない（初期値のmale扱いにする等）
-    filterBar.style.display = 'block';
-    currentGender = 'male';
-    // 男子ボタンをアクティブに戻しておく
-    document.querySelectorAll('.gender-toggle button').forEach(b => b.classList.remove('active'));
-    document.getElementById('gBtn-male').classList.add('active');
-  } else {
-    genderBar.style.display = 'none';
-    filterBar.style.display = 'none';
+function playerJa(name) { return PLAYER_JA[name] || name; }
+function teamJa(name) {
+  if (TEAM_JA[name]) return TEAM_JA[name];
+  for (const [key, val] of Object.entries(TEAM_JA)) {
+    if (name.includes(key) || key.includes(name)) return val;
   }
-
-  // 性別状態に合わせてリーグプルダウンを更新
-  updateLeagueOptions(currentGender);
-  
-  // データの再読み込みと描画
-  loadMatchData();
+  return name;
 }
 
-// 男女カテゴリ切り替え処理（今回のメイン修正項目）
-function setGender(gender, btn) {
-  currentGender = gender;
-  
-  // ボタンの見た目制御
-  document.querySelectorAll('.gender-toggle button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  
-  // リーグ選択肢を動かして絞り込む
-  updateLeagueOptions(gender);
-  
-  // フィルターを適用してデータを再描画
-  applyFilter();
+function toJST(utcStr) {
+  const d = new Date(utcStr);
+  const jst = new Date(d.getTime() + 9*60*60*1000);
+  let h = jst.getUTCHours();
+  const m = jst.getUTCMinutes();
+  if (h < 6) h += 24;
+  return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`;
+}
+function toJSTDate(utcStr) {
+  const d = new Date(utcStr);
+  const jst = new Date(d.getTime() + 9*60*60*1000);
+  if (jst.getUTCHours() < 6) {
+    const prev = new Date(jst.getTime() - 24*60*60*1000);
+    return prev.toISOString().split('T')[0];
+  }
+  return jst.toISOString().split('T')[0];
 }
 
-// 性別データに基づいてリーグセレクトボックスの中身を書き換える関数
-function updateLeagueOptions(gender) {
-  const sel = document.getElementById('leagueSel');
-  const currentValue = sel.value; // 現在選ばれているリーグの値を保持
-  
-  // 一旦全クリアして初期値をセット
-  sel.innerHTML = '<option value="all">全リーグ</option>';
-  
-  // 指定された性別、または「全員(all)」に該当するリーグだけを抽出して追加
-  LEAGUES.filter(l => l.gender === gender || l.gender === 'all').forEach(l => {
-    const opt = document.createElement('option');
-    opt.value = l.val;
-    opt.textContent = l.name;
-    sel.appendChild(opt);
-  });
-  
-  // もし書き換える前に選択していたリーグが、新しいリストの中にも存在していれば再選択させる
-  if ([...sel.options].some(o => o.value === currentValue)) {
-    sel.value = currentValue;
+const todayJST = toJSTDate(new Date().toISOString());
+const DOW = ["日","月","火","水","木","金","土"];
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// タブ別マッチ分類
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function getMatchTab(m) {
+  if (m.tab) return m.tab;
+  if (m.youth) return "youth";
+  const cfg = LEAGUE_CONFIG[m.league];
+  if (cfg) return cfg.tab;
+  if (m.national) return "national";
+  return "europe";
+}
+
+function getMatchGender(m) {
+  if (m.gender) return m.gender;
+  const cfg = LEAGUE_CONFIG[m.league];
+  if (cfg && cfg.gender) return cfg.gender;
+  return "male";
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UI 制御
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const GENDER_TABS = ["europe","japanese","national","north","youth"];
+const FILTER_TABS = ["europe","middle","north"];
+
+function updateUI() {
+  document.querySelectorAll(".main-nav button").forEach(b => b.classList.remove("active"));
+  const activeBtn = document.getElementById("tab-" + currentTab);
+  if (activeBtn) activeBtn.classList.add("active");
+
+  const gBar = document.getElementById("genderBar");
+  gBar.style.display = GENDER_TABS.includes(currentTab) ? "" : "none";
+  document.getElementById("gBtn-male").classList.toggle("active",   currentGender === "male");
+  document.getElementById("gBtn-female").classList.toggle("active", currentGender === "female");
+
+  const fBar = document.getElementById("filterBar");
+  if (FILTER_TABS.includes(currentTab)) {
+    fBar.style.display = "";
+    rebuildLeagueSelect();
   } else {
-    sel.value = 'all'; // なければ「全リーグ」に戻す
+    fBar.style.display = "none";
   }
 }
 
-// フィルター適用処理
+function rebuildLeagueSelect() {
+  const sel = document.getElementById("leagueSel");
+  const allOptions = TAB_LEAGUES[currentTab] || [];
+
+  // gender プロパティがあるリーグは currentGender に合わせて絞り込む
+  const hasGenderProp = allOptions.some(o => o.gender);
+  const options = hasGenderProp
+    ? allOptions.filter(o => !o.gender || o.gender === currentGender)
+    : allOptions;
+
+  let html = `<option value="all">全リーグ</option>`;
+  options.forEach(o => { html += `<option value="${o.v}">${o.l}</option>`; });
+  sel.innerHTML = html;
+
+  // 現在選択中のリーグが絞り込み後に存在しない場合はリセット
+  if (options.some(o => o.v === fLeague)) {
+    sel.value = fLeague;
+  } else {
+    fLeague = "all";
+    sel.value = "all";
+  }
+}
+
+function setTab(tab, el) {
+  currentTab = tab;
+  fLeague = "all";
+  history.replaceState(null, '', '#' + tab);
+  updateUI();
+  render();
+}
+
+function setGender(g) {
+  currentGender = g;
+  updateUI();
+  render();
+}
+
 function applyFilter() {
-  loadMatchData();
+  fLeague = document.getElementById("leagueSel").value;
+  render();
 }
-
-// リセットボタン処理
 function resetFilter() {
-  document.getElementById('leagueSel').value = 'all';
-  loadMatchData();
+  fLeague = "all";
+  document.getElementById("leagueSel").value = "all";
+  render();
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// データ表示・モック描画処理
+// データ読み込み
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-function loadMatchData() {
-  const content = document.getElementById('content');
-  const selectedLeague = document.getElementById('leagueSel').value;
-  
-  // ローディングアニメーションの表示
-  content.innerHTML = '<div class="loading"><div class="spinner"></div><p>データを読み込み中...</p></div>';
-  
-  // 本来はここでGitHub APIや外部JSONからデータをfetchしますが、
-  // 今回はモック（ダミーデータ）を用いて条件に応じた表示の切り替えを行います。
-  setTimeout(() => {
-    // ダミーの試合データ配列
-    const dummyMatches = [
-      { id: 1, time: "04:00", date: "5月28日 (木)", home: "Brighton", away: "Liverpool", leagueClass: "l-epl", leagueVal: "epl", gender: "male", tab: "europe", player: "三笘薫 / 遠藤航" },
-      { id: 2, time: "23:00", date: "5月28日 (木)", home: "Real Sociedad", away: "Barcelona", leagueClass: "l-laliga", leagueVal: "laliga", gender: "male", tab: "europe", player: "久保建英" },
-      { id: 3, time: "19:00", date: "5月29日 (金)", home: "Japan", away: "Australia", leagueClass: "l-wc", leagueVal: "wc", gender: "male", tab: "national", player: "日本代表" },
-      { id: 4, time: "15:00", date: "5月29日 (金)", home: "Japan", away: "South Korea", leagueClass: "l-womens", leagueVal: "womens", gender: "female", tab: "japanese", player: "なでしこジャパン" }
-    ];
+const DATA_URL = 'data/matches.json';
 
-    // 現在のタブ、性別、リーグ選択の条件でフィルタリング
-    let filtered = dummyMatches.filter(m => {
-      // タブ条件の確認
-      if (currentTab === 'europe' && m.tab !== 'europe') return false;
-      if (currentTab === 'japanese' && m.tab !== 'europe' && m.tab !== 'japanese') return false;
-      if (currentTab === 'national' && m.tab !== 'national') return false;
-      
-      // 性別条件の確認 (genderBarが表示されているタブのみ検証)
-      const genderBarVisible = document.getElementById('genderBar').style.display !== 'none';
-      if (genderBarVisible && m.gender !== currentGender && m.gender !== 'all') return false;
-      
-      // リーグ条件の確認
-      if (selectedLeague !== 'all' && m.leagueVal !== selectedLeague) return false;
-      
-      return true;
-    });
+async function loadData() {
+  try {
+    const res = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('fetch failed');
+    const json = await res.json();
+    MATCHES = json.matches || [];
+    document.getElementById('updatedAt').textContent = json.updatedAt || '—';
+    render();
+  } catch (e) {
+    document.getElementById('content').innerHTML =
+      `<div class="empty"><div class="ico">⚠️</div><p>データの読み込みに失敗しました</p></div>`;
+  }
+}
 
-    if (filtered.length === 0) {
-      content.innerHTML = `
-        <div class="empty">
-          <div class="ico">📅</div>
-          <p>該当する試合予定が見つかりませんでした。</p>
-        </div>`;
-      return;
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// レンダリング
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function render() {
+  let data = MATCHES.filter(m => {
+    const mTab    = getMatchTab(m);
+    const mGender = getMatchGender(m);
+
+    if (currentTab === "japanese") {
+      if (!["europe","middle","north"].includes(mTab)) return false;
+      if (!m.japanese || m.japanese.length === 0) return false;
+      if (mGender !== currentGender) return false;
+    } else if (currentTab === "national") {
+      if (mTab !== "national") return false;
+      if (mGender !== currentGender) return false;
+    } else if (currentTab === "youth") {
+      if (mTab !== "youth") return false;
+      if (mGender !== currentGender) return false;
+    } else if (currentTab === "europe") {
+      if (mTab !== "europe") return false;
+      if (mGender !== currentGender) return false;
+    } else if (currentTab === "middle") {
+      if (mTab !== "middle") return false;
+    } else if (currentTab === "north") {
+      if (mTab !== "north") return false;
+      if (mGender !== currentGender) return false;
     }
 
-    // 日付ごとにグループ化してHTMLを生成
-    let html = '';
-    let currentGroupDate = '';
-    
-    filtered.forEach(m => {
-      if (m.date !== currentGroupDate) {
-        currentGroupDate = m.date;
-        html += `
-          <div class="day-header">
-            <span class="day-label today">${m.date}</span>
-            <div class="day-hr"></div>
-          </div>`;
-      }
+    if (fLeague !== "all" && m.league !== fLeague) return false;
+    return true;
+  });
 
-      const homeJa = TEAM_JA[m.home] || m.home;
-      const awayJa = TEAM_JA[m.away] || m.away;
-      const homeCrest = TEAM_CREST[m.home] || '⚽';
-      const awayCrest = TEAM_CREST[m.away] || '⚽';
+  if (data.length === 0) {
+    document.getElementById("content").innerHTML =
+      `<div class="empty"><div class="ico">📭</div><p>表示できる試合がありません</p></div>`;
+    return;
+  }
 
-      html += `
-        <div class="match-row">
-          <div class="m-time">
-            <span class="m-kick">${m.time}</span>
-          </div>
-          <div class="m-main">
+  const grouped = {};
+  data.forEach(m => {
+    const dateKey = toJSTDate(m.kickoffUTC);
+    (grouped[dateKey] = grouped[dateKey] || []).push(m);
+  });
+
+  let html = "";
+  Object.keys(grouped).sort().forEach(date => {
+    const isToday = date === todayJST;
+    const d = new Date(date + "T12:00:00+09:00");
+    const dow = DOW[d.getDay()];
+    const label = `${date.replace(/-/g,"/")}(${dow})`;
+    const list = grouped[date];
+
+    html += `<div class="day-header">
+      <div class="day-label ${isToday?"today":""}">${isToday?"● 今日　":""} ${label}</div>
+      <div class="day-hr"></div>
+      <div class="day-count">${list.length}試合</div>
+    </div>`;
+
+    list.forEach((m, i) => {
+      const leagueJa = LEAGUE_JA[m.league] || m.league;
+      const homeJa   = teamJa(m.home);
+      const awayJa   = teamJa(m.away);
+      const jstTime  = toJST(m.kickoffUTC);
+      const lClass   = m.lClass || "l-champ";
+      const mGender  = getMatchGender(m);
+
+      const hCrestUrl = m.homeCrest || TEAM_CREST[m.home] || null;
+      const aCrestUrl = m.awayCrest || TEAM_CREST[m.away] || null;
+      const hCrest = hCrestUrl
+        ? `<img class="crest" src="${hCrestUrl}" alt="" onerror="this.style.display='none'">`
+        : "";
+      const aCrest = aCrestUrl
+        ? `<img class="crest" src="${aCrestUrl}" alt="" onerror="this.style.display='none'">`
+        : "";
+
+      const womenBadge = mGender === "female"
+        ? `<span class="l-badge l-womens">♀</span>` : "";
+
+      const playersJa = (m.japanese && m.japanese.length > 0)
+        ? m.japanese.map(n => playerJa(n)) : [];
+      const pHtml = playersJa.length > 0
+        ? `<div class="m-right">${playersJa.map(n=>`<span class="p-tag">${n}</span>`).join("")}</div>`
+        : "";
+
+      html += `<div class="match-row" style="animation-delay:${i*.04}s">
+        <div class="m-time"><div class="m-kick">${jstTime}</div></div>
+        <div class="m-main">
+          <div class="m-left">
             <div class="m-top">
+              <span class="l-badge ${lClass}">${leagueJa}</span>
+              ${womenBadge}
               <div class="m-teams-inline">
-                <span>
-                  <span class="team-cell right">
-                    ${homeCrest.startsWith('http') ? `<img src="${homeCrest}" class="crest" alt="">` : homeCrest}
-                    ${homeJa}
-                  </span>
-                </span>
-                <span class="m-vs">VS</span>
-                <span>
-                  <span class="team-cell">
-                    ${awayCrest.startsWith('http') ? `<img src="${awayCrest}" class="crest" alt="">` : awayCrest}
-                    ${awayJa}
-                  </span>
-                </span>
-              </div>
-              <div class="m-right">
-                <span class="l-badge ${m.leagueClass}">${m.leagueVal.toUpperCase()}</span>
-                ${m.player ? `<span class="p-tag">${m.player}</span>` : ''}
+                <span class="team-cell right">${hCrest}${homeJa}</span>
+                <span class="m-vs">vs</span>
+                <span class="team-cell">${aCrest}${awayJa}</span>
               </div>
             </div>
           </div>
-        </div>`;
+          ${pHtml}
+        </div>
+      </div>`;
     });
+  });
 
-    content.innerHTML = html;
-  }, 300);
+  document.getElementById("content").innerHTML = html;
 }
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 初期化
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+updateUI();
+loadData();
+setInterval(loadData, 60*60*1000);
+setInterval(render,   60*1000);
 </script>
 </body>
 </html>
