@@ -35,13 +35,7 @@ jobs:
         env:
           RAPIDAPI_KEY:     ${{ secrets.RAPIDAPI_KEY }}
           FOOTBALLDATA_KEY: ${{ secrets.FOOTBALLDATA_KEY }}
-          APIFY_TOKEN:      ${{ secrets.APIFY_TOKEN }}   # ← これを追加
-          
-      - name: Fetch matches
-        run: node scripts/fetch_matches.js
-        env:
-          RAPIDAPI_KEY:     ${{ secrets.RAPIDAPI_KEY }}
-          FOOTBALLDATA_KEY: ${{ secrets.FOOTBALLDATA_KEY }}
+          APIFY_TOKEN:      ${{ secrets.APIFY_TOKEN }}   #
  
       - name: Commit and push
         run: |
